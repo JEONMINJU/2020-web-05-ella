@@ -1,6 +1,24 @@
 /********* 전역선언 **********/
-
-
+var product =  [ 
+	{
+		title: "MARK",
+		summary: "Dinterdum Pretium De Condimentus",
+		star: 5.0,
+		originalPrice:199.00,
+		salePrice:"",
+		origin: "from",
+		src: "../img/pic1.jpg"
+	},
+	{
+		title: "G-STAR",
+		summary: "Dinterdum Pretium De Condimentus",
+		star: 0,
+		originalPrice:189.00,
+		salePrice:"",
+		origin: "",
+		src: "../img/pic1.jpg"
+	},
+]
 
 /********* 사용자함수 **********/
 

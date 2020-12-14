@@ -17,10 +17,10 @@
 			units: 'metric' 
 		}
 		function onGet(result) {
-			console.log(result);
+			console.log(result); //결과가 여기로 들어온다.
 		}
 		$("#btGet").click(function(){
-			$.get(url, data, onGet); 
+			$.get(url, data, onGet);  // 이거 한줄이 ajax 
 		});
         
         /* url이 주소에 이 데이터를 보낼테니 (서버에 통신) 결과를 받아서 onGet에서 실행해라 */
