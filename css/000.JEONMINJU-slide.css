@@ -4,19 +4,16 @@
 .w-100 {width: 100%;}
 
 .JEONMINJU-slide {position: relative;}
-.JEONMINJU-slide > .slide-stage {overflow: hidden; /* border: 2px solid red; */}
-.JEONMINJU-slide > .slide-stage > .slide-wrapper {width: 100%; position: relative; display: flex; left: 0;}
-.JEONMINJU-slide > .slide-stage > .slide-wrapper > .slide {flex-shrink: 0; flex-grow: 0; position: relative; left: -100%; padding: 1%;}
+.JEONMINJU-slide > .slide-stage {overflow: hidden;}
+.JEONMINJU-slide > .slide-stage > .slide-wrapper {width: 100%; position: relative; display: flex;}
+.JEONMINJU-slide > .slide-stage > .slide-wrapper > .slide {flex-shrink: 0; flex-grow: 0; position: relative; left: -100%;}
 
 .JEONMINJU-slide > .bt-slide {color: rgba(0,0,0,0.3); font-size: 5em; position: absolute; top: 50%; transform: translateY(-50%); cursor: pointer; line-height: 0.95; transition: all 0.5s; user-select: none; text-shadow: 0 0 0.15em rgba(255,255,255,0.5);}
 .JEONMINJU-slide > .bt-slide:hover {color: rgba(0,0,0,0.8);}
-.JEONMINJU-slide > .bt-prev::after {display: block; content: '〈';}
-.JEONMINJU-slide > .bt-next::after {display: block; content: '〉';}
 .JEONMINJU-slide > .bt-prev {left: 0;}
 .JEONMINJU-slide > .bt-next {right: 0;}
-.JEONMINJU-slide > .pager-wrapper {width: 100%; position: relative; display: flex; justify-content: center; padding: 0.5em 0;}
+.JEONMINJU-slide > .pager-wrapper {width: 100%; position: absolute; display: flex; justify-content: center; padding: 0.5em 0;}
 .JEONMINJU-slide > .pager-wrapper > .pager {color: red; opacity: .3; cursor: pointer; user-select: none;}
-.JEONMINJU-slide > .pager-wrapper > .pager::after {display: block; content: '●';}
 .JEONMINJU-slide > .pager-wrapper > .pager.active {opacity: .8;}
 
 
