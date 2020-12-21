@@ -1,0 +1,16 @@
+.wrapper{max-width: 700px; margin: auto; text-align: center;} 
+
+h1.title{ margin: 1em auto; border-bottom: 3px solid #ccc; display: inline-block;}
+
+.show-wrapper {display: flex; justify-content:space-between;}
+.show-wrapper > .img-wrap{flex: 60% 0 0; overflow: hidden;}
+.show-wrapper > .img-wrap > img{width: 400px;}
+.show-wrapper > .info-wrap{flex: 40% 0 0; background-color: #eaeaee; padding: 3%;}
+.show-wrapper > .info-wrap > .title { font-size: 1.25em;}
+.show-wrapper > .info-wrap > .summary {text-align: left; padding: 1em; background-color: #fff; border-radius: 0.25em;
+margin-top: 1.25em;}
+.show-wrapper > .info-wrap > .bt-search {margin: 1em 0;}
+
+.thumb-wrapper {height: 100px; display: flex; justify-content: center;}
+.thumb-wrapper > .thumb{height: 100%; padding: 10px 5px;}
+.thumb-wrapper > .thumb > img{height: 100%; cursor: pointer;}
