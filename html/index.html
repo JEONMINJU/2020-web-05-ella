@@ -92,6 +92,9 @@
 		<!-- .navi-wrapper -->
 		<div class="navi-wrapper rel">
 			<div class="wrapper">
+				 <a href="#" class="navi-logo">
+					 	<img src="../img/logo.png" alt="로고" class="w-100">
+				 </a>
 				<div class="navi navi-new">
 					<!-- depth-1 삽입될 곳 -->
 					<div class="sub-wrapper type-1">
@@ -120,7 +123,7 @@
 						<!-- 각자의 사정에 맞게 넣는곳 -->
 						<div class="navi-bottom">
 							<div class="wrapper">
-								<a href="#" class="img-wrap">
+								<a href="#" class="img-wrap"> <!-- wrapper 플렉스를 주면 어차피 인라인 블럭이 되기때문에 디브로 굳이 묶지 않음 -->
 									<img src="../img/mega-menu-2.jpg" alt="링크">
 								</a>
 								<a href="#" class="img-wrap">
@@ -164,6 +167,7 @@
 				<span class="line"></span>
 				<a href="#" class="bt-wishlist"><i class="fa fa-heart"></i></a>
 				<a href="#" class="rel"><i class="fa fa-shopping-bag"></i><div class="cart-cnt">0</div></a>
+				<a href="#" class="bt-login"><i class="fa fa-user-circle"></i></a>
 			</div>
 		</div>
 		<!-- .navi-wrapper // -->
@@ -171,30 +175,46 @@
 	<!-- .header-wrapper // -->
 
 <!-- .main-wrapper -->
-		<section class="main-wrapper">
-				<div class="banner-wrapper">
-						<div class="banner-wrap">
-							<img src="" alt="">
-							<div></div>
+		<section class="main-wrapper swiper-container">
+				<div class="banner-wrapper swiper-wrapper">
+						<div class="banner-wrap swiper-slide">
+							<img src="../img/slide1.jpg" alt="배너" class="img w-100">
+							<div class="slogan-wrapper">
+								<div class="slogan-wrap">
+									 <h4 class="title-sub">NEW COLLECTION</h4>
+									 <h3 class="title">World of Denim</h3>
+									 <p class="summary">Maxime placeat facere possimus voluptas assumenda.</p>
+									 <a href="#" class="bt-link">SHOP DENIM</a>
+								</div>
+							</div>
 						</div><!-- 1 -->
-						<div class="banner-wrap">
-							<img src="" alt="">
-							<div></div>
+						<div class="banner-wrap swiper-slide">
+							<img src="../img/slide2.jpg" alt="배너" class="img w-100">
+							<div class="slogan-wrapper">
+								<div class="slogan-wrap">
+									<h4 class="title-sub">NEW COLLECTION</h4>
+									<h3 class="title">World of Pants</h3>
+									<p class="summary">Maxime placeat facere possimus voluptas assumenda.</p>
+									<a href="#" class="bt-link">SHOP DENIM</a>
+								</div>
+							</div>
 						</div><!-- 2 -->
-						<div class="banner-wrap">
-							<img src="" alt="">
-							<div></div>
+						<div class="banner-wrap swiper-slide">
+							<img src="../img/slide3.jpg" alt="배너" class="img w-100">
+							<div class="slogan-wrapper">
+								<div class="slogan-wrap">
+									<h4 class="title-sub">NEW COLLECTION</h4>
+									<h3 class="title">World of Outer</h3>
+									<p class="summary">Maxime placeat facere possimus voluptas assumenda.</p>
+									<a href="#" class="bt-link">SHOP DENIM</a>
+								</div>
+							</div>
 						</div><!-- 3-->
 						<div class="pager-wrapper">
-							<div class="bt-prev"></div>
-							<div class="pager-wrap">
-								<div class="pager"></div>
-								<div class="pager"></div>
-								<div class="pager"></div>
-							</div><!--  pager-wrap // -->
-							<div class="bt-next"></div>
+							<div class="bt-arrow bt-prev">〈</div>
+							<div class="pager-wrap"></div>
+							<div class="bt-arrow bt-next">〉</div>
 						</div><!-- pager-wrapper // -->
-				</div><!-- banner-wrapper // -->
 		</section>
   <!-- .main-wrapper // -->
 	<script src="../js/index.js"></script>

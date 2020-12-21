@@ -1,7 +1,22 @@
 /********* 전역선언 **********/
-
+var scTop, topHeight, logoHeight, winWidth;
 
 /********* 사용자함수 **********/
+function mainBanner() {
+	var swiper = new Swiper('.main-wrapper.swiper-container', {
+		loop: true,
+		effect: 'fade',
+		pagination: {
+			el: '.main-wrapper .pager-wrap',
+			clickable: true,
+		},
+		navigation: {
+			nextEl: '.main-wrapper .bt-next',
+			prevEl: '.main-wrapper .bt-prev',
+		},
+	});
+}
+
 function createNavi(r) {
 	var html  = '<a href="'+r.link+'" class="hover-line">';
 	if(r.icon) html += '<i class="'+r.icon+'"></i> ';
@@ -52,6 +67,30 @@ function createSubNavi(el, r) {
 	$(el).find('.depth2').mouseleave(onDepth2Leave);
 }
 
+function naviShowHide() {
+	if(winWidth >= 1199) { // PC
+		if(scTop >= topHeight + logoHeight){
+			$(".navi-wrapper").css({"position": "fixed"});
+			$(".navi-wrapper > .wrapper").css("max-width", "100%");
+			$(".navi-wrapper .navi-logo").css("display", "block");
+			$(".navi-wrapper .bt-login").css("display", "block");
+		}
+		else {
+			$(".navi-wrapper").css("position", "relative");
+			$(".navi-wrapper > .wrapper").css("max-width", "1200px");
+			$(".navi-wrapper .navi-logo").css("display", "none");
+			$(".navi-wrapper .bt-login").css("display", "none");
+		}
+		$(".logo-wrapper").css({"position": "relative"});
+	}
+	else { // Mobile
+		if(scTop >= topHeight)
+			$(".logo-wrapper").css({"position": "fixed"});
+		else
+			$(".logo-wrapper").css("position", "relative");
+		$(".navi-wrapper").css({"position": "relative"});
+	}
+}
 
 /********* 이벤트선언 **********/
 $('.top-wrapper .icon-down').click(onLangChg); // 언어선택
@@ -67,8 +106,24 @@ $.get('../json/navi-kids.json', onNaviKids); // Kids 상품 가져오기
 $(".navi-wrapper .navi").mouseenter(onNaviEnter);
 $(".navi-wrapper .navi").mouseleave(onNaviLeave);
 
+$(window).scroll(onScroll).resize(onResize).trigger("resize");
+
+mainBanner();
+
+
 
 /********* 이벤트콜백 **********/
+function onResize(e) {
+	topHeight = $('.top-wrapper').outerHeight();
+	logoHeight = $('.logo-wrapper').outerHeight();
+	winWidth = $(window).width();
+}
+
+function onScroll(e) {
+	scTop = $(this).scrollTop();
+	naviShowHide(); // navi-wrapper fixed
+}
+
 function onSub2Enter() {
 	$(this).find('.sub-wrapper2').stop().slideDown(300);
 }
@@ -118,8 +173,8 @@ function onNaviBest(r) {
 	$(".navi.navi-best").prepend(createNavi(r));
 	$(".navi.navi-best").find('.sub-navi-wrapper').append(createSub(r));
 	for(var i=0; i<r.alphabet.length; i++) {
-		if(r.alphabet[i].class == '')
-			html = '<li><a>'+r.alphabet[i].name+'</a></li>';
+		if(r.alphabet[i].class == '')//만약에 알파벳의 [i]번째의 클래스가 빈값이라면
+			html = '<li><a>'+r.alphabet[i].name+'</a></li>';//<a>태크가 밑줄없이 존재만 하는거
 		else 
 			html = '<li><a href="#" class="active">'+r.alphabet[i].name+'</a></li>';
 		$(".navi.navi-best").find('.alphabet-wrap').append(html);
