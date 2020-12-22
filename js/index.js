@@ -1,5 +1,5 @@
 /********* 전역선언 **********/
-var scTop, topHeight, logoHeight, winWidth;
+var scTop, topHeight, logoHeight, winWidth, navi = [];
 
 /********* 사용자함수 **********/
 function mainBanner() {
@@ -92,27 +92,100 @@ function naviShowHide() {
 	}
 }
 
+function createMoNavi() {
+	console.log(navi);
+	var html = '';
+	html += '<div class="top-wrap">';
+	html += '	<div class="close-wrap3 bt-close">';
+	html += '		<i class="fa fa-times"></i>';
+	html += '	</div>';
+	html += '	<div class="tel-wrap">Available 24/7 at <strong>(018) 900-6690</strong></div>';
+	html += '</div>';
+	html += '<ul>';
+	for(var i=0; i<navi.length; i++) {
+		html += '<li onclick="createDepth2('+i+');">';
+		html += '<a href="#">'+navi[i].name+'</a>';
+		html += '<i class="fa fa-angle-right"></i>';
+		html += '</li>';
+	}
+	html += '</ul>';
+	$(".modal-navi").find('.depth1').html(html);
+}
+
+function createDepth2(idx) {
+	html  = '<div class="top-wrap">';
+	html += '	<div class="close-wrap3 bt-prev">';
+	html += '		<i class="fa fa-angle-left"></i>';
+	html += '	</div>';
+	html += '	<h4 class="title">'+navi[idx].name+'</h4>';
+	html += '</div>';
+	html += '<ul>';
+	for(var i=0; i<navi[idx].depth2.length; i++) {
+		html += '<li onclick="createDepth3('+idx+', '+i+');">';
+		html += '<a href="#">'+navi[idx].depth2[i].name+'</a>';
+		html += '<i class="fa fa-angle-right"></i>';
+		html += '</li>';
+	}
+	html += '</ul>';
+	$(".modal-navi .depth2").html(html);
+	$(".modal-navi .depth2").addClass("active")
+}
+
+
+
 /********* 이벤트선언 **********/
+mainBanner();	// 배너세팅
+$(window).scroll(onScroll).resize(onResize).trigger("resize");
+
 $('.top-wrapper .icon-down').click(onLangChg); // 언어선택
 $('.top-wrapper .bt-down').click(onLangSel); // 언어선택
+
 $.get('../json/navi-new.json', onNaviNew);	// new release 생성
 $.get('../json/navi-best.json', onNaviBest);	// best sellers 생성
 $.get('../json/navi-sales.json', onNaviSales); // sales 생성
-$.get('../json/new-products.json', onNewProducts); // new releases 상품 가져오기
 $.get('../json/navi-men.json', onNaviMen); // Men 상품 가져오기
 $.get('../json/navi-women.json', onNaviWomen); // Women 상품 가져오기
 $.get('../json/navi-kids.json', onNaviKids); // Kids 상품 가져오기
 
-$(".navi-wrapper .navi").mouseenter(onNaviEnter);
-$(".navi-wrapper .navi").mouseleave(onNaviLeave);
+$.get('../json/new-products.json', onNewProducts); // new releases 상품 가져오기
 
-$(window).scroll(onScroll).resize(onResize).trigger("resize");
+$(".navi-wrapper .navi").mouseenter(onNaviEnter);	// 메인네비
+$(".navi-wrapper .navi").mouseleave(onNaviLeave);	// 메인네비
 
-mainBanner();
+$(".modal-trigger").click(onModalShow);
+$(".modal-container").click(onModalHide);
+$('.modal-wrapper').click(onModalWrapperClick);
+$('.modal-wrapper').find(".bt-close").click(onModalHide);
+
+
 
 
 
 /********* 이벤트콜백 **********/
+function onModalWrapperClick(e) {
+	e.stopPropagation();
+}
+
+function onModalShow(e) {
+	e.preventDefault();	// 기본이벤트 a니까 href의 기능(기본기능)을 막는다.
+	$(".modal-container").css({"display": "block"});// 디스플레이 논 되어 있던 것을 블럭으로 바꾸고( 꺼진 기능 켜주고)
+	$(".modal-container").css("opacity");//오퍼시티가 0인 것을 인식시켜준 후
+	$(".modal-container").addClass('active');//액티브를 줘서 오퍼시티 1이 먹게.
+	$("body").addClass("hide");
+	$($(this).data('modal')).addClass("active");
+	if($(this).data('modal') === '.modal-navi') createMoNavi();
+}
+
+
+function onModalHide(e) {
+	$(".modal-container").removeClass('active');
+	$('.modal-wrapper').removeClass("active");
+	setTimeout(function(){
+		$(".modal-container").css({"display": "none"});
+		$("body").removeClass("hide");
+	}, 300);
+}
+
 function onResize(e) {
 	topHeight = $('.top-wrapper').outerHeight();
 	logoHeight = $('.logo-wrapper').outerHeight();
@@ -141,14 +214,17 @@ function onDepth2Leave() {
 }
 
 function onNaviMen(r) {
+	navi[2] = r;
 	createSubNavi('.navi.navi-men', r);
 }
 
 function onNaviWomen(r) {
+	navi[3] = r;
 	createSubNavi('.navi.navi-women', r);
 }
 
 function onNaviKids(r) {
+	navi[4] = r;
 	createSubNavi('.navi.navi-kids', r);
 }
 
@@ -161,6 +237,7 @@ function onNaviLeave() {
 }
 
 function onNaviNew(r) {
+	navi[0] = r;
 	$(".navi.navi-new").prepend(createNavi(r));
 	var html = createSub(r);
 	html += '<div class="sub-banner">';
@@ -170,11 +247,12 @@ function onNaviNew(r) {
 }
 
 function onNaviBest(r) {
+	navi[1] = r;
 	$(".navi.navi-best").prepend(createNavi(r));
 	$(".navi.navi-best").find('.sub-navi-wrapper').append(createSub(r));
 	for(var i=0; i<r.alphabet.length; i++) {
-		if(r.alphabet[i].class == '')//만약에 알파벳의 [i]번째의 클래스가 빈값이라면
-			html = '<li><a>'+r.alphabet[i].name+'</a></li>';//<a>태크가 밑줄없이 존재만 하는거
+		if(r.alphabet[i].class == '')
+			html = '<li><a>'+r.alphabet[i].name+'</a></li>';
 		else 
 			html = '<li><a href="#" class="active">'+r.alphabet[i].name+'</a></li>';
 		$(".navi.navi-best").find('.alphabet-wrap').append(html);
@@ -182,6 +260,7 @@ function onNaviBest(r) {
 }
 
 function onNaviSales(r) {
+	navi[5] = r;
 	$(".navi.navi-sales").prepend(createNavi(r));
 	for(var i=0; i<r.brands.length; i++) {
 		html  = '<div class="brand-wrap">';

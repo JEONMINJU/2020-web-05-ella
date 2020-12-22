@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>event bubbling</title>
+  <style>
+        .wrapper{ width: 200px; height: 200px; background:  blueviolet;}
+        .wrap{width: 150px; height: 150px; background:  blue;}
+        .box{width: 100px; height: 100px; background:  orange;}
+  </style>
+  <script src="../js/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+      <div class="wrapper">
+        <div class="wrap">
+            <div class="box">
+                    <a href="//naver.com" class="link">클릭</a>
+            </div>
+        </div>
+      </div>
+      <script>
+          $(".wrapper").click(function(e){
+              console.log(".wrapper");
+          });
+          $(".wrap").click(function(e){
+              console.log(".wrap");
+         });
+          $(".box").click(function(e){
+              e.stopPropagation(); // 나의 event 를 내 부모한테 전파하지 마라.
+              console.log(".box");
+          });
+          $(".link").click(function(e){
+            e.stopPropagation();
+            e.preventDefault(); //  default 를 막아라.
+              console.log(".link");
+          });
+      </script>
+</body>
+</html>

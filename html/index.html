@@ -70,7 +70,7 @@
 		<!-- .top-wrapper // -->
 		<!-- .logo-wrapper -->
 		<div class="logo-wrapper wrapper">
-			<i class="bars fa fa-bars"></i>
+			<a href="#" class="bars fa fa-bars modal-trigger" data-modal=".modal-navi"></a>
 			<div class="logo-wrap">
 				<a href="#"><img src="../img/logo.png" alt="logo" class=" mw-100"></a>
 			</div>
@@ -79,27 +79,33 @@
 					<div>FLASH SALE</div>
 					<div>FROM $29</div>
 				</div>
-				<a href="#" class="a-login hover-line">Login</a>
-				<a href="#" class="bt-login"><i class="fa fa-user-circle"></i></a>
+				<a href="#" class="bt-login modal-trigger" data-modal=".modal-login"><!-- [ data-이름지정 ] <=data set  -->
+					<span class="hover-line">Login</span>
+					<i class="fa fa-user-circle"></i>
+				</a>
 			</div>
 			<div class="link-mo-wrap">
 				<a href="#"><i class="fa fa-search"></i></a>
-				<a href="#"><i class="fa fa-user-circle"></i></a>
-				<a href="#" class="rel"><i class="fa fa-shopping-bag"></i><div class="cart-cnt">0</div></a>
+				<a href="#" class="modal-trigger" data-modal=".modal-login">
+					<i class="fa fa-user-circle"></i>
+				</a>
+				<a href="#" class="modal-trigger rel" data-modal=".modal-cart">
+					<i class="fa fa-shopping-bag"></i><div class="cart-cnt">0</div>
+				</a>
 			</div>
 		</div>
 		<!-- .logo-wrapper // -->
 		<!-- .navi-wrapper -->
 		<div class="navi-wrapper rel">
 			<div class="wrapper">
-				 <a href="#" class="navi-logo">
-					 	<img src="../img/logo.png" alt="로고" class="w-100">
-				 </a>
+				<a href="#" class="navi-logo">
+					<img src="../img/logo.png" alt="로고" class="w-100">
+				</a>
 				<div class="navi navi-new">
 					<!-- depth-1 삽입될 곳 -->
 					<div class="sub-wrapper type-1">
 						<div class="sub-navi-wrapper wrapper">
-					<!-- depth-2, 3, banner 삽입될 곳 -->
+							<!-- depth-2, 3, banner 삽입될 곳 -->
 						</div>
 						<div class="slide-container navi-bottom" id="newSlide">
 							<div class="wrapper-mid rel">
@@ -111,7 +117,7 @@
 								<i class="bt-arrow bt-prev fa fa-angle-left"></i>
 								<i class="bt-arrow bt-next fa fa-angle-right"></i>
 							</div>
-						</div><!-- slide-container // -->
+						</div>
 					</div>
 				</div>
 				<div class="navi navi-best">
@@ -123,7 +129,7 @@
 						<!-- 각자의 사정에 맞게 넣는곳 -->
 						<div class="navi-bottom">
 							<div class="wrapper">
-								<a href="#" class="img-wrap"> <!-- wrapper 플렉스를 주면 어차피 인라인 블럭이 되기때문에 디브로 굳이 묶지 않음 -->
+								<a href="#" class="img-wrap"><!-- wrapper 플렉스를 주면 어차피 인라인 블럭이 되기때문에 디브로 굳이 묶지 않음 -->
 									<img src="../img/mega-menu-2.jpg" alt="링크">
 								</a>
 								<a href="#" class="img-wrap">
@@ -142,17 +148,17 @@
 					<ul class="sub-wrapper2">
 						
 					</ul>
-				</div><!-- navi navi-men // -->
+				</div>
 				<div class="navi navi-women rel">
 					<ul class="sub-wrapper2">
 
 					</ul>
-				</div><!-- navi navi-women // -->
+				</div>
 				<div class="navi navi-kids rel">
 					<ul class="sub-wrapper2">
 						
 					</ul>
-				</div><!-- navi navi-kids // -->
+				</div>
 				<div class="navi navi-sales">
 					<!-- depth-1 삽입될 곳 -->
 					<div class="sub-wrapper type-1">
@@ -161,62 +167,109 @@
 							<!-- 생성 -->
 						</div>
 					</div>
-				</div><!-- navi navi-sales // -->
+				</div>
 				<a href="#" class="a-search">Search</a>
 				<a href="#" class="bt-search"><i class="fa fa-search"></i></a>
 				<span class="line"></span>
-				<a href="#" class="bt-wishlist"><i class="fa fa-heart"></i></a>
-				<a href="#" class="rel"><i class="fa fa-shopping-bag"></i><div class="cart-cnt">0</div></a>
-				<a href="#" class="bt-login"><i class="fa fa-user-circle"></i></a>
+				<a href="#" class="bt-wishlist modal-trigger" data-modal=".modal-wish"><i class="fa fa-heart"></i></a>
+				<a href="#" class="modal-trigger rel" data-modal=".modal-cart">
+					<i class="fa fa-shopping-bag"></i><div class="cart-cnt">0</div>
+				</a>
+				<a href="#" class="modal-trigger bt-login" data-modal=".modal-login">
+					<i class="fa fa-user-circle"></i>
+				</a>
 			</div>
 		</div>
 		<!-- .navi-wrapper // -->
 	</header>
 	<!-- .header-wrapper // -->
 
-<!-- .main-wrapper -->
-		<section class="main-wrapper swiper-container">
-				<div class="banner-wrapper swiper-wrapper">
-						<div class="banner-wrap swiper-slide">
-							<img src="../img/slide1.jpg" alt="배너" class="img w-100">
-							<div class="slogan-wrapper">
-								<div class="slogan-wrap">
-									 <h4 class="title-sub">NEW COLLECTION</h4>
-									 <h3 class="title">World of Denim</h3>
-									 <p class="summary">Maxime placeat facere possimus voluptas assumenda.</p>
-									 <a href="#" class="bt-link">SHOP DENIM</a>
-								</div>
-							</div>
-						</div><!-- 1 -->
-						<div class="banner-wrap swiper-slide">
-							<img src="../img/slide2.jpg" alt="배너" class="img w-100">
-							<div class="slogan-wrapper">
-								<div class="slogan-wrap">
-									<h4 class="title-sub">NEW COLLECTION</h4>
-									<h3 class="title">World of Pants</h3>
-									<p class="summary">Maxime placeat facere possimus voluptas assumenda.</p>
-									<a href="#" class="bt-link">SHOP DENIM</a>
-								</div>
-							</div>
-						</div><!-- 2 -->
-						<div class="banner-wrap swiper-slide">
-							<img src="../img/slide3.jpg" alt="배너" class="img w-100">
-							<div class="slogan-wrapper">
-								<div class="slogan-wrap">
-									<h4 class="title-sub">NEW COLLECTION</h4>
-									<h3 class="title">World of Outer</h3>
-									<p class="summary">Maxime placeat facere possimus voluptas assumenda.</p>
-									<a href="#" class="bt-link">SHOP DENIM</a>
-								</div>
-							</div>
-						</div><!-- 3-->
-						<div class="pager-wrapper">
-							<div class="bt-arrow bt-prev">〈</div>
-							<div class="pager-wrap"></div>
-							<div class="bt-arrow bt-next">〉</div>
-						</div><!-- pager-wrapper // -->
-		</section>
-  <!-- .main-wrapper // -->
+	<!-- .main-wrapper -->
+	<section class="main-wrapper swiper-container">
+		<div class="banner-wrapper swiper-wrapper">
+			<div class="banner-wrap swiper-slide">
+				<img src="../img/slide1.jpg" alt="배너" class="img w-100">
+				<div class="slogan-wrapper">
+					<div class="slogan-wrap">
+						<h4 class="title-sub">NEW COLLECTION</h4>
+						<h3 class="title">World of Denim</h3>
+						<p class="summary">Maxime placeat facere possimus voluptas assumenda.</p>
+						<a href="#" class="bt-link">SHOP DENIM</a>
+					</div>
+				</div>
+			</div>
+			<div class="banner-wrap swiper-slide">
+				<img src="../img/slide2.jpg" alt="배너" class="img w-100">
+				<div class="slogan-wrapper">
+					<div class="slogan-wrap">
+						<h4 class="title-sub">NEW COLLECTION</h4>
+						<h3 class="title">World of Pants</h3>
+						<p class="summary">Maxime placeat facere possimus voluptas assumenda.</p>
+						<a href="#" class="bt-link">SHOP DENIM</a>
+					</div>
+				</div>
+			</div>
+			<div class="banner-wrap swiper-slide">
+				<img src="../img/slide3.jpg" alt="배너" class="img w-100">
+				<div class="slogan-wrapper">
+					<div class="slogan-wrap">
+						<h4 class="title-sub">NEW COLLECTION</h4>
+						<h3 class="title">World of Outer</h3>
+						<p class="summary">Maxime placeat facere possimus voluptas assumenda.</p>
+						<a href="#" class="bt-link">SHOP DENIM</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="pager-wrapper">
+			<div class="bt-arrow bt-prev">〈</div>
+			<div class="pager-wrap"></div>
+			<div class="bt-arrow bt-next">〉</div>
+		</div>
+	</section>
+	<!-- .main-wrapper // -->
+
+
+	<!-- .modal-container -->
+	<div class="modal-container">
+		<div class="modal-wrapper type-rt modal-login">
+			<div class="close-wrap">
+				<button class="bt-close"><i class="fa fa-times"></i> CLOSE</button>
+			</div>
+			<h1 class="title">LOGIN</h1>
+			<form action="#">
+				<label for="userEmail">Email Address <i class="red">*</i></label>
+				<input type="text" id="userEmail" name="userEmail" class="input-default" placeholder="Email Address">
+				<label for="userPass">Password <i class="red">*</i></label>
+				<input type="text" id="userPass" name="userPass" class="input-default" placeholder="Password">
+				<button class="bt-blue">LOGIN</button>
+			</form>
+			<p>Forgot your password?</p>
+			<a href="#" class="bt-white">CREATE AN ACCOUNT</a>
+		</div>
+		<div class="modal-wrapper type-rt modal-cart">
+			<div class="close-wrap">
+				<button class="bt-close"><i class="fa fa-times"></i> CLOSE</button>
+			</div>
+			<h1 class="title">Your Bag</h1>
+			<p style="text-align: center;">Your cart is currently empty.</p>
+			<a href="#" class="bt-white bt-border">CONTINUE SHOPPING</a>
+		</div>
+		<div class="modal-wrapper type-ct modal-wish">
+			<div class="close-wrap2 bt-close">
+				<i class="fa fa-times"></i>
+			</div>
+			<h1 class="title tc">Wish list</h1>
+			<p class="tc">Your cart is currently empty.</p>
+			<a href="#" class="bt-white bt-border">CONTINUE SHOPPING</a>
+		</div>
+		<div class="modal-wrapper type-lt modal-navi">
+			<div class="depth depth1"></div>
+			<div class="depth depth2"></div>
+			<div class="depth depth3"></div>
+		</div>
+	</div>
+	<!-- .modal-container // -->
 	<script src="../js/index.js"></script>
 </body>
 </html>
