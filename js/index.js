@@ -1,7 +1,38 @@
 /********* 전역선언 **********/
 var scTop, topHeight, logoHeight, winWidth, navi = [];
 
+
+
 /********* 사용자함수 **********/
+function renderPrd() {
+	$('.prd').each(function(i){
+			var discount = $(this).data('discount');
+			var icon = $(this).data('icon');
+			if(discount) {
+				$(this).find('.icon-wrap').append('<div class="discount">'+discount+'</div>');
+			}
+			if(icon && icon.length > 0) {
+				for(var i=0, html=''; i<icon.length; i++) {
+					html += '<div class="icon" style="background-color: '+icon[i].bg+';">'+icon[i].title+'</div>';
+				}
+				$(this).find('.icon-wrap').append(html);
+			}
+	});
+}
+
+function chgImg(el,src) {
+	 $(el).parents('.prd').find('.img-front').attr('src', src);
+	 $(el).parent().addClass('active').siblings().removeClass('active');
+}
+
+function renderStar() {
+	 $(".star").each(function(i){
+			var score = Number($(this).data('score'));
+			if(score > 0) $(this).find("i").addClass("active");
+			$(this).find(".mask").css("left", score * 20 + "%");
+	 });
+}
+
 function mainBanner() {
 	var swiper = new Swiper('.main-wrapper.swiper-container', {
 		loop: true,
@@ -15,7 +46,7 @@ function mainBanner() {
 			prevEl: '.main-wrapper .bt-prev',
 		},
 	});
-}
+} /* mainBanner 스와이퍼  가져온거*/
 
 function createNavi(r) {
 	var html  = '<a href="'+r.link+'" class="hover-line">';
@@ -109,36 +140,72 @@ function createMoNavi() {
 		html += '</li>';
 	}
 	html += '</ul>';
-	$(".modal-navi").find('.depth1').html(html);
+	$(".modal-navi").find('.depth1').html(html)
+	$(".modal-navi").find('.depth1').append($(".trans-wrapper").clone().attr("style", "")).find('.trans-bg').remove();
+	$(".modal-navi").find('depth1').find('trans-wrapper .bt-down').click(onLangSel);
+
+
+	$(".modal-navi .depth2, .modal-navi .depth3").removeClass('active');
 }
 
 function createDepth2(idx) {
 	html  = '<div class="top-wrap">';
-	html += '	<div class="close-wrap3 bt-prev">';
+	html += '	<div class="close-wrap3 bt-prev" onclick="closeDepth(2)">';
 	html += '		<i class="fa fa-angle-left"></i>';
 	html += '	</div>';
 	html += '	<h4 class="title">'+navi[idx].name+'</h4>';
 	html += '</div>';
 	html += '<ul>';
 	for(var i=0; i<navi[idx].depth2.length; i++) {
-		html += '<li onclick="createDepth3('+idx+', '+i+');">';
-		html += '<a href="#">'+navi[idx].depth2[i].name+'</a>';
-		html += '<i class="fa fa-angle-right"></i>';
-		html += '</li>';
+		if(navi[idx].depth2[i].depth3 && navi[idx].depth2[i].depth3.length > 0) {
+			html += '<li onclick="createDepth3('+idx+', '+i+');">';
+			html += '<a href="#">'+navi[idx].depth2[i].name+'</a>';
+			html += '<i class="fa fa-angle-right"></i>';
+			html += '</li>';
+		}
+		else {
+			html += '<li>';
+			html += '<a href="#">'+navi[idx].depth2[i].name+'</a>';
+			html += '</li>';
+		}
 	}
 	html += '</ul>';
 	$(".modal-navi .depth2").html(html);
 	$(".modal-navi .depth2").addClass("active")
 }
 
+function createDepth3(idx, idx2) {
+	html = '<div class="top=wrap">';
+	html += '	 <div class="close-wrap3 bt-prev" onclick="closeDepth(3)">';
+	html += '		  <i class="fa fa-angle-left"></i>';
+	html += '	 </div>';
+	html += '	 <h4 class="title">'+navi[idx].depth2[idx2].name+'</h4>';
+	html += '</div>';
+	html += '<ul>';
+	for(var i=0; i<navi[idx].depth2[idx2].depth3.length; i++) {
+	html += '	<li>';
+	html += '		<a href="#">'+navi[idx].depth2[idx2].depth3[i].name+'</a>';
+	html += '	</li>';
+}
+	html += '</ul>';
+	$(".modal-navi .depth3").html(html);
+	$(".modal-navi .depth3").addClass("active");
+}
 
+function closeDepth(n) {
+	 $(".modal-navi .depth"+n).removeClass("active");
+}
 
 /********* 이벤트선언 **********/
 mainBanner();	// 배너세팅
-$(window).scroll(onScroll).resize(onResize).trigger("resize");
+
+$(window).scroll(onScroll); // scroll spy
+$(window).resize(onResize).trigger("resize"); // el 높이, 폭, 위치
 
 $('.top-wrapper .icon-down').click(onLangChg); // 언어선택
 $('.top-wrapper .bt-down').click(onLangSel); // 언어선택
+$('.trans-wrapper .trans-bg').click(onTransBg); // trans창 닫기
+$('.trans-wrapper .lang').click(onLangClick); // trans창 닫기
 
 $.get('../json/navi-new.json', onNaviNew);	// new release 생성
 $.get('../json/navi-best.json', onNaviBest);	// best sellers 생성
@@ -148,6 +215,7 @@ $.get('../json/navi-women.json', onNaviWomen); // Women 상품 가져오기
 $.get('../json/navi-kids.json', onNaviKids); // Kids 상품 가져오기
 
 $.get('../json/new-products.json', onNewProducts); // new releases 상품 가져오기
+$.get('../json/looking.json', onLooking); // Looking  생성 looking.json을 찾아서 onLooking을 실행할 것이다.
 
 $(".navi-wrapper .navi").mouseenter(onNaviEnter);	// 메인네비
 $(".navi-wrapper .navi").mouseleave(onNaviLeave);	// 메인네비
@@ -158,20 +226,39 @@ $('.modal-wrapper').click(onModalWrapperClick);
 $('.modal-wrapper').find(".bt-close").click(onModalHide);
 
 
-
+renderStar();
+renderPrd();
 
 
 /********* 이벤트콜백 **********/
-function onModalWrapperClick(e) {
+
+function onLooking(r) {
+	for(var i=0, html=''; i<r.length; i++) {
+		html += '<li class="spot">';
+		html += '<a href="'+r[i].link+'">';
+		html += '<img src="'+r[i].src+'" alt="spot-img" class="w-100 animate__animated">';
+		html += '<h3 class="title hover-line">'+r[i].title+'</h3>';
+		html += '</a>';
+		html += '</li>';
+	}
+	$(".looking-wrapper .spot-wrapper").html(html);
+}
+
+function onTransBg(e) {
+	e.stopPropagation();
+	onLangChg();
+}
+
+function onModalWrapperClick(e) { //여기서 e  는 event 인자를 써먹은 것
 	e.stopPropagation();
 }
 
 function onModalShow(e) {
-	e.preventDefault();	// 기본이벤트 a니까 href의 기능(기본기능)을 막는다.
+	e.preventDefault();	// 기본이벤트 a니까 href의 기능(기본기능)을 막는다. preventDefault는 자바스크립트의 기본 옵션이다.
 	$(".modal-container").css({"display": "block"});// 디스플레이 논 되어 있던 것을 블럭으로 바꾸고( 꺼진 기능 켜주고)
 	$(".modal-container").css("opacity");//오퍼시티가 0인 것을 인식시켜준 후
 	$(".modal-container").addClass('active');//액티브를 줘서 오퍼시티 1이 먹게.
-	$("body").addClass("hide");
+	$("body").addClass("hide"); //그래야 body가 height=100vh를 갖고 오버플로우를 먹는다. 그러므로 스크롤을 죽이게 된다.
 	$($(this).data('modal')).addClass("active");
 	if($(this).data('modal') === '.modal-navi') createMoNavi();
 }
@@ -182,8 +269,8 @@ function onModalHide(e) {
 	$('.modal-wrapper').removeClass("active");
 	setTimeout(function(){
 		$(".modal-container").css({"display": "none"});
-		$("body").removeClass("hide");
-	}, 300);
+		$("body").removeClass("hide"); //리무브클래스 하이드가 되면서 스크롤은 다시 생긴다.
+	}, 300); //0.3초 이후에 이 함수({}안의)를 실행해라
 }
 
 function onResize(e) {
@@ -262,15 +349,15 @@ function onNaviBest(r) {
 function onNaviSales(r) {
 	navi[5] = r;
 	$(".navi.navi-sales").prepend(createNavi(r));
-	for(var i=0; i<r.brands.length; i++) {
+	for(var i=0; i<r.depth2.length; i++) {
 		html  = '<div class="brand-wrap">';
-		html += '<div class="img-wrap" style="background-image: url('+r.brands[i].src+'); order: '+i%2+'">';
+		html += '<div class="img-wrap" style="background-image: url('+r.depth2[i].src+'); order: '+i%2+'">';
 		html += '</div>';
 		html += '<ul class="brand-link">';
-		html += '<li class="sub-navi bold">'+r.brands[i].company+'</li>';
-		for(var j=0; j<r.brands[i].brand.length; j++) {
+		html += '<li class="sub-navi bold">'+r.depth2[i].company+'</li>';
+		for(var j=0; j<r.depth2[i].depth3.length; j++) {
 			html += '<li class="sub-navi hover-line">';
-			html += '<a href="'+r.brands[i].brand[j].link+'">'+r.brands[i].brand[j].name+'</a>';
+			html += '<a href="'+r.depth2[i].depth3[j].link+'">'+r.depth2[i].depth3[j].name+'</a>';
 			html += '</li>';
 		}
 		html += '</ul>';
@@ -323,4 +410,14 @@ function onLangChg() {
 function onLangSel() {
 	$(".trans-wrapper .lang-sel").stop().slideUp(200);
 	if($(this).next().css("display") === 'none') $(this).next().stop().slideDown(200);
+}
+function onLangClick() {
+	var $container = $(this).parent().parent().parent();
+	var lang = $(this).text();
+	var bg = $(this).prev().css("background-image");
+	$container.find('.lang').removeClass('active');
+	$(this).addClass('active');
+	$container.find('.flag-now').css("background-image", bg);
+	$container.find('.lang-now').text(lang);
+	$(this).parent().parent().stop().slideUp(200);
 }
