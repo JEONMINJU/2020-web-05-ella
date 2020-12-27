@@ -300,7 +300,7 @@ h2.title-main {font-family: 'DM Serif Display', serif; font-size: 2.5em; letter-
 }
 
 @media screen and (max-width: 767px) {
-	.main-wrapper .pager-wrapper {font-size: 0.5em;}
+	.main-wrapper .pager-wrapper {font-size: 0.5em;}/* 1em 에서 반으로 줄어라 */
 	.main-wrapper .slogan-wrapper {display: none;}
 	.looking-wrapper .spot-wrapper > .spot {flex: 33.3333% 0 0;}
 }

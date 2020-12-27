@@ -1,6 +1,6 @@
 /********* 전역선언 **********/
 var scTop, topHeight, logoHeight, winWidth, navi = [];
-
+// 언제나 가져다 사용할 수 있게 전역변수로 선언해놓음.
 
 
 /********* 사용자함수 **********/
@@ -83,7 +83,7 @@ function createSub2(r) {
 				html += '</li>';
 			}
 			html += '</ul>';
-		}
+		} // depth3가 있니? depth3가 0보다 크면 만들어 줄게의 이프문 
 		html += '</li>';
 	}
 	return html;
@@ -94,16 +94,17 @@ function createSubNavi(el, r) {
 	$(el).find('.sub-wrapper2').append(createSub2(r));
 	$(el).mouseenter(onSub2Enter);
 	$(el).mouseleave(onSub2Leave);
-	$(el).find('.depth2').mouseenter(onDepth2Enter);
+	$(el).find('.depth2').mouseenter(onDepth2Enter); // 내 안에 있는 .depth2라는 놈을 찾아서  그 뎁스2를 마우스엔터하면 밑에 작성해놓은 onDepth2Enter 작동
 	$(el).find('.depth2').mouseleave(onDepth2Leave);
 }
 
+// 스크롤 시 네비상황
 function naviShowHide() {
-	if(winWidth >= 1199) { // PC
-		if(scTop >= topHeight + logoHeight){
+	if(winWidth >= 1199) { // 1199보다 크면 PC 버전
+		if(scTop >= topHeight + logoHeight){ //topHeight + logoHeight 두개 크기를 벗어나는 순간
 			$(".navi-wrapper").css({"position": "fixed"});
-			$(".navi-wrapper > .wrapper").css("max-width", "100%");
-			$(".navi-wrapper .navi-logo").css("display", "block");
+			$(".navi-wrapper > .wrapper").css("max-width", "100%");//원래 1200px으로 되있는걸 100%
+			$(".navi-wrapper .navi-logo").css("display", "block"); // 안에 있는 애들이기때문에 > 사용 안한다.
 			$(".navi-wrapper .bt-login").css("display", "block");
 		}
 		else {
@@ -112,14 +113,14 @@ function naviShowHide() {
 			$(".navi-wrapper .navi-logo").css("display", "none");
 			$(".navi-wrapper .bt-login").css("display", "none");
 		}
-		$(".logo-wrapper").css({"position": "relative"});
+		$(".logo-wrapper").css({"position": "relative"});// 위가 어떻든 로고레퍼는 기준을 가져야한다.
 	}
 	else { // Mobile
-		if(scTop >= topHeight)
+		if(scTop >= topHeight) //탑의 높이보다 커지면(얘를 스크롤로 지나가면)
 			$(".logo-wrapper").css({"position": "fixed"});
 		else
 			$(".logo-wrapper").css("position", "relative");
-		$(".navi-wrapper").css({"position": "relative"});
+		$(".navi-wrapper").css({"position": "relative"});// 얘도 언제나 기준
 	}
 }
 
@@ -127,7 +128,7 @@ function createMoNavi() {
 	console.log(navi);
 	var html = '';
 	html += '<div class="top-wrap">';
-	html += '	<div class="close-wrap3 bt-close">';
+	html += '	<div class="close-wrap3 bt-close" onclick="onModalHide()">'; // bt-close를 클릭하면 onModalHide()가 될것이다
 	html += '		<i class="fa fa-times"></i>';
 	html += '	</div>';
 	html += '	<div class="tel-wrap">Available 24/7 at <strong>(018) 900-6690</strong></div>';
@@ -142,11 +143,12 @@ function createMoNavi() {
 	html += '</ul>';
 	$(".modal-navi").find('.depth1').html(html)
 	$(".modal-navi").find('.depth1').append($(".trans-wrapper").clone().attr("style", "")).find('.trans-bg').remove();
-	$(".modal-navi").find('depth1').find('trans-wrapper .bt-down').click(onLangSel);
+	$(".modal-navi").find('.depth1').find('.trans-wrapper .bt-down').click(onLangSel);
 
 
-	$(".modal-navi .depth2, .modal-navi .depth3").removeClass('active');
+	$(".modal-navi .depth2, .modal-navi .depth3").removeClass('active'); //초기화를 시켜주고 시작한다. 바스 클릭시 모달 나올때마다 뎁스1이 먼저 보이게?
 }
+
 
 function createDepth2(idx) {
 	html  = '<div class="top-wrap">';
@@ -175,32 +177,34 @@ function createDepth2(idx) {
 }
 
 function createDepth3(idx, idx2) {
-	html = '<div class="top=wrap">';
-	html += '	 <div class="close-wrap3 bt-prev" onclick="closeDepth(3)">';
-	html += '		  <i class="fa fa-angle-left"></i>';
-	html += '	 </div>';
-	html += '	 <h4 class="title">'+navi[idx].depth2[idx2].name+'</h4>';
+	html  = '<div class="top-wrap">';
+	html += '	<div class="close-wrap3 bt-prev" onclick="closeDepth(3)">';
+	html += '		<i class="fa fa-angle-left"></i>';
+	html += '	</div>';
+	html += '	<h4 class="title">'+navi[idx].depth2[idx2].name+'</h4>';
 	html += '</div>';
 	html += '<ul>';
 	for(var i=0; i<navi[idx].depth2[idx2].depth3.length; i++) {
-	html += '	<li>';
-	html += '		<a href="#">'+navi[idx].depth2[idx2].depth3[i].name+'</a>';
-	html += '	</li>';
-}
+		html += '<li>';
+		html += '<a href="#">'+navi[idx].depth2[idx2].depth3[i].name+'</a>';
+		html += '</li>';
+	}
 	html += '</ul>';
 	$(".modal-navi .depth3").html(html);
 	$(".modal-navi .depth3").addClass("active");
 }
 
+// n 은 넘버를 받은거
 function closeDepth(n) {
-	 $(".modal-navi .depth"+n).removeClass("active");
-}
+	$(".modal-navi .depth"+n).removeClass("active");
+} // 2를 보내면 2번이 리무브, 3을 보내면 3번 리무브 (뎁스 닫을때)
+
 
 /********* 이벤트선언 **********/
 mainBanner();	// 배너세팅
 
-$(window).scroll(onScroll); // scroll spy
-$(window).resize(onResize).trigger("resize"); // el 높이, 폭, 위치
+$(window).scroll(onScroll); // scroll spy , window 에 3개의 이벤트를 붙였다.
+$(window).resize(onResize).trigger("resize"); // el 높이, 폭, 위치 
 
 $('.top-wrapper .icon-down').click(onLangChg); // 언어선택
 $('.top-wrapper .bt-down').click(onLangSel); // 언어선택
@@ -274,19 +278,19 @@ function onModalHide(e) {
 }
 
 function onResize(e) {
-	topHeight = $('.top-wrapper').outerHeight();
+	topHeight = $('.top-wrapper').outerHeight(); //topHeigh 는 .top-wrapper 의 outerHeight 값을 구한다.
 	logoHeight = $('.logo-wrapper').outerHeight();
-	winWidth = $(window).width();
+	winWidth = $(window).width(); //리사이즈 될때마다 winWidth 를 구한다. window의 width 값을 구한다.
 }
 
 function onScroll(e) {
-	scTop = $(this).scrollTop();
-	naviShowHide(); // navi-wrapper fixed
+	scTop = $(this).scrollTop(); // 스크롤 탑을 구해서 naviShowHide() 함수 실행
+	naviShowHide(); // navi-wrapper fixed, 리사이즈 될때마다 naviShowHide함수 실행하라.
 }
 
 function onSub2Enter() {
 	$(this).find('.sub-wrapper2').stop().slideDown(300);
-}
+} // 내 안에 있는 .sub-wrapper2를 찾아서 다운시켜라
 
 function onSub2Leave() {
 	$(this).find('.sub-wrapper2').stop().slideUp(300);
@@ -403,21 +407,25 @@ function onNewProducts(r) {
 		},
 	});
 }
+
 function onLangChg() {
 	$(".trans-wrapper").stop().slideToggle(200);
-	$(".trans-wrapper .lang-sel").stop().slideUp(200);
+	$(".trans-wrapper .lang-sel").stop().slideUp(200); //trans-wrapper 가 들어가든 나오든 밑에 .lang-sel 은 없어야 하니깐 업문장 넣어주기(안넣어주면 다시 trans-wrapper 를 클릭해서 내렸을때도 그대로 있다.)
 }
 function onLangSel() {
 	$(".trans-wrapper .lang-sel").stop().slideUp(200);
-	if($(this).next().css("display") === 'none') $(this).next().stop().slideDown(200);
-}
+	console.log($(this).next());
+	if($(this).next().css("display") === 'none') $(this).next().stop().slideDown(200); //먼저 나의 바로 옆에 있는 놈의 display속성을 읽어들이고,
+} //내 밑에 있는 놈이 보이는 상태니 ? 안보이는 상태니? , 즉 내 옆 애가 안보이면 내 옆에 있는 놈만 슬라이드 다운 시켜 보이게하라.
 function onLangClick() {
 	var $container = $(this).parent().parent().parent();
-	var lang = $(this).text();
-	var bg = $(this).prev().css("background-image");
-	$container.find('.lang').removeClass('active');
-	$(this).addClass('active');
-	$container.find('.flag-now').css("background-image", bg);
-	$container.find('.lang-now').text(lang);
-	$(this).parent().parent().stop().slideUp(200);
+	var lang = $(this).text(); //변수에 랭귀지를 넣어 나의 텍스트를 읽어들이면,
+	var bg = $(this).prev().css("background-image");//나의 이전에(앞에) 있는 놈에 이미지를 불러온다.
+
+	//여기서 나,this는 ul class .lang을 의미하며 그 앞에는 디브 class .flag에 백그라운드 이미지(국기이미지)들어가 있음
+	$container.find('.lang').removeClass('active');//컨데이너에 있는 랭을 찾아서 액티브를 리무브하고
+	$(this).addClass('active'); //나만 액티브를 가질거야.(텍스트 밑에 라인 생기는거)
+	$container.find('.flag-now').css("background-image", bg); //$container 안에서 .flag-now 를 찾아서 그놈의 css에 있는 background-image를 bg로 바꿔라
+	$container.find('.lang-now').text(lang); //.lang-now'를 찾아서 텍스트를 lang으로 넣어라.
+	$(this).parent().parent().stop().slideUp(200); //나( lang ) 의 부모( li )의 부모 ( ul ) 
 }

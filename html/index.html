@@ -186,14 +186,14 @@
 	</header>
 	<!-- .header-wrapper // -->
 
-	<!-- .main-wrapper -->
-	<section class="main-wrapper swiper-container">
-		<div class="banner-wrapper swiper-wrapper">
-			<div class="banner-wrap swiper-slide">
-				<img src="../img/slide1.jpg" alt="배너" class="img w-100">
-				<div class="slogan-wrapper">
-					<div class="slogan-wrap">
-						<h4 class="title-sub">NEW COLLECTION</h4>
+	<!-- .main-wrapper --> 
+	<section class="main-wrapper swiper-container"> <!--  swiper-container-->
+		<div class="banner-wrapper swiper-wrapper"> <!-- swiper-wrapper -->
+			<div class="banner-wrap swiper-slide"> <!--  swiper-slide-->
+				<img src="../img/slide1.jpg" alt="배너" class="img w-100"> <!--  w-100 내 부모 크기에 맞춰서 줄어들게(창이 줄면 이미지가 같이 줄어들게)-->
+				<div class="slogan-wrapper"><!-- 슬로건 배너 화이트 , swiper-slide 포지션 rel를 가지고 있어서 중복으로 주지 않고 바로 abs띄우기-->
+					<div class="slogan-wrap"><!-- 보더를 가질 애 -->
+						<h4 class="title-sub">NEW COLLECTION</h4><!-- 시멘틱 태그 -->
 						<h3 class="title">World of Denim</h3>
 						<p class="summary">Maxime placeat facere possimus voluptas assumenda.</p>
 						<a href="#" class="bt-link">SHOP DENIM</a>
@@ -223,9 +223,9 @@
 				</div>
 			</div>
 		</div>
-		<div class="pager-wrapper">
+		<div class="pager-wrapper"> 
 			<div class="bt-arrow bt-prev">〈</div>
-			<div class="pager-wrap"></div>
+			<div class="pager-wrap"></div><!-- 스와이퍼 가져다 쓸때 페이져레퍼는 따로 만들어봤자 의미 없다. 알아서 만들어줌 -->
 			<div class="bt-arrow bt-next">〉</div>
 		</div>
 	</section>
@@ -416,48 +416,48 @@
 
 
 
-	<!-- .modal-container -->
-	<div class="modal-container">
-		<div class="modal-wrapper type-rt modal-login">
-			<div class="close-wrap">
-				<button class="bt-close"><i class="fa fa-times"></i> CLOSE</button>
+		<!-- .modal-container -->
+		<div class="modal-container">
+			<div class="modal-wrapper type-rt modal-login">
+				<div class="close-wrap">
+					<button class="bt-close"><i class="fa fa-times"></i> CLOSE</button>
+				</div>
+				<h2 class="title-main">LOGIN</h2>
+				<form action="#">
+					<label for="userEmail">Email Address <i class="red">*</i></label>
+					<input type="text" id="userEmail" name="userEmail" class="input-default" placeholder="Email Address">
+					<label for="userPass">Password <i class="red">*</i></label>
+					<input type="text" id="userPass" name="userPass" class="input-default" placeholder="Password">
+					<button class="bt-blue">LOGIN</button>
+				</form>
+				<p>Forgot your password?</p>
+				<a href="#" class="bt-white">CREATE AN ACCOUNT</a>
 			</div>
-			<h2 class="title-main">LOGIN</h2>
-			<form action="#">
-				<label for="userEmail">Email Address <i class="red">*</i></label>
-				<input type="text" id="userEmail" name="userEmail" class="input-default" placeholder="Email Address">
-				<label for="userPass">Password <i class="red">*</i></label>
-				<input type="text" id="userPass" name="userPass" class="input-default" placeholder="Password">
-				<button class="bt-blue">LOGIN</button>
-			</form>
-			<p>Forgot your password?</p>
-			<a href="#" class="bt-white">CREATE AN ACCOUNT</a>
-		</div>
-		<div class="modal-wrapper type-rt modal-cart">
-			<div class="close-wrap">
-				<button class="bt-close"><i class="fa fa-times"></i> CLOSE</button>
+			<div class="modal-wrapper type-rt modal-cart">
+				<div class="close-wrap">
+					<button class="bt-close"><i class="fa fa-times"></i> CLOSE</button>
+				</div>
+				<h2 class="title-main">Your Bag</h2>
+				<p style="text-align: center;">Your cart is currently empty.</p>
+				<a href="#" class="bt-white bt-border">CONTINUE SHOPPING</a>
 			</div>
-			<h2 class="title-main">Your Bag</h2>
-			<p style="text-align: center;">Your cart is currently empty.</p>
-			<a href="#" class="bt-white bt-border">CONTINUE SHOPPING</a>
-		</div>
-		<div class="modal-wrapper type-ct modal-wish">
-			<div class="close-wrap2 bt-close">
-				<i class="fa fa-times"></i>
+			<div class="modal-wrapper type-ct modal-wish">
+				<div class="close-wrap2 bt-close">
+					<i class="fa fa-times"></i>
+				</div>
+				<h2 class="title-main tc">Wish list</h2>
+				<p class="tc">Your cart is currently empty.</p>
+				<a href="#" class="bt-white bt-border">CONTINUE SHOPPING</a>
 			</div>
-			<h2 class="title-main tc">Wish list</h2>
-			<p class="tc">Your cart is currently empty.</p>
-			<a href="#" class="bt-white bt-border">CONTINUE SHOPPING</a>
-		</div>
-		<div class="modal-wrapper type-lt modal-navi">
-			<div class="depth depth1">
-				
+			<div class="modal-wrapper type-lt modal-navi">
+				<div class="depth depth1">
+					
+				</div>
+				<div class="depth depth2"></div>
+				<div class="depth depth3"></div>
 			</div>
-			<div class="depth depth2"></div>
-			<div class="depth depth3"></div>
 		</div>
-	</div>
-	<!-- .modal-container // -->
-	<script src="../js/index.js"></script>
-</body>
-</html>
+		<!-- .modal-container // -->
+		<script src="../js/index.js"></script>
+	</body>
+	</html>
