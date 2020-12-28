@@ -6,31 +6,32 @@ var scTop, topHeight, logoHeight, winWidth, navi = [];
 /********* 사용자함수 **********/
 function renderPrd() {
 	$('.prd').each(function(i){
-			var discount = $(this).data('discount');
-			var icon = $(this).data('icon');
-			if(discount) {
-				$(this).find('.icon-wrap').append('<div class="discount">'+discount+'</div>');
+		var discount = $(this).data('discount');
+		var icon = $(this).data('icon');
+		$(this).find('.icon-wrap').empty();
+		if(discount) {
+			$(this).find('.icon-wrap').append('<div class="discount">'+discount+'</div>');
+		}
+		if(icon && icon.length > 0) {
+			for(var i=0, html=''; i<icon.length; i++) {
+				html += '<div class="icon" style="background-color: '+icon[i].bg+';">'+icon[i].title+'</div>';
 			}
-			if(icon && icon.length > 0) {
-				for(var i=0, html=''; i<icon.length; i++) {
-					html += '<div class="icon" style="background-color: '+icon[i].bg+';">'+icon[i].title+'</div>';
-				}
-				$(this).find('.icon-wrap').append(html);
-			}
+			$(this).find('.icon-wrap').append(html);
+		}
 	});
 }
 
-function chgImg(el,src) {
-	 $(el).parents('.prd').find('.img-front').attr('src', src);
-	 $(el).parent().addClass('active').siblings().removeClass('active');
+function chgImg(el, src) {
+	$(el).parents('.prd').find('.img-front').attr('src', src);
+	$(el).parent().addClass('active').siblings().removeClass('active');
 }
 
 function renderStar() {
-	 $(".star").each(function(i){
-			var score = Number($(this).data('score'));
-			if(score > 0) $(this).find("i").addClass("active");
-			$(this).find(".mask").css("left", score * 20 + "%");
-	 });
+	$(".star").each(function(i){
+		var score = Number($(this).data('score'));
+		if(score > 0) $(this).find("i").addClass("active");
+		$(this).find(".mask").css("left", score * 20 + "%");
+	});
 }
 
 function mainBanner() {
@@ -83,7 +84,7 @@ function createSub2(r) {
 				html += '</li>';
 			}
 			html += '</ul>';
-		} // depth3가 있니? depth3가 0보다 크면 만들어 줄게의 이프문 
+		}// depth3가 있니? depth3가 0보다 크면 만들어 줄게의 이프문 
 		html += '</li>';
 	}
 	return html;
@@ -94,14 +95,14 @@ function createSubNavi(el, r) {
 	$(el).find('.sub-wrapper2').append(createSub2(r));
 	$(el).mouseenter(onSub2Enter);
 	$(el).mouseleave(onSub2Leave);
-	$(el).find('.depth2').mouseenter(onDepth2Enter); // 내 안에 있는 .depth2라는 놈을 찾아서  그 뎁스2를 마우스엔터하면 밑에 작성해놓은 onDepth2Enter 작동
+	$(el).find('.depth2').mouseenter(onDepth2Enter);// 내 안에 있는 .depth2라는 놈을 찾아서  그 뎁스2를 마우스엔터하면 밑에 작성해놓은 onDepth2Enter 작동
 	$(el).find('.depth2').mouseleave(onDepth2Leave);
 }
 
 // 스크롤 시 네비상황
 function naviShowHide() {
-	if(winWidth >= 1199) { // 1199보다 크면 PC 버전
-		if(scTop >= topHeight + logoHeight){ //topHeight + logoHeight 두개 크기를 벗어나는 순간
+	if(winWidth >= 1199) {// 1199보다 크면 PC 버전
+		if(scTop >= topHeight + logoHeight){//topHeight + logoHeight 두개 크기를 벗어나는 순간
 			$(".navi-wrapper").css({"position": "fixed"});
 			$(".navi-wrapper > .wrapper").css("max-width", "100%");//원래 1200px으로 되있는걸 100%
 			$(".navi-wrapper .navi-logo").css("display", "block"); // 안에 있는 애들이기때문에 > 사용 안한다.
@@ -113,14 +114,14 @@ function naviShowHide() {
 			$(".navi-wrapper .navi-logo").css("display", "none");
 			$(".navi-wrapper .bt-login").css("display", "none");
 		}
-		$(".logo-wrapper").css({"position": "relative"});// 위가 어떻든 로고레퍼는 기준을 가져야한다.
-	}
+		$(".logo-wrapper").css({"position": "relative"});
+	}// 위가 어떻든 로고레퍼는 기준을 가져야한다.
 	else { // Mobile
 		if(scTop >= topHeight) //탑의 높이보다 커지면(얘를 스크롤로 지나가면)
 			$(".logo-wrapper").css({"position": "fixed"});
 		else
 			$(".logo-wrapper").css("position", "relative");
-		$(".navi-wrapper").css({"position": "relative"});// 얘도 언제나 기준
+		$(".navi-wrapper").css({"position": "relative"}); // 얘도 언제나 기준
 	}
 }
 
@@ -146,9 +147,8 @@ function createMoNavi() {
 	$(".modal-navi").find('.depth1').find('.trans-wrapper .bt-down').click(onLangSel);
 
 
-	$(".modal-navi .depth2, .modal-navi .depth3").removeClass('active'); //초기화를 시켜주고 시작한다. 바스 클릭시 모달 나올때마다 뎁스1이 먼저 보이게?
+	$(".modal-navi .depth2, .modal-navi .depth3").removeClass('active');  //초기화를 시켜주고 시작한다. 바스 클릭시 모달 나올때마다 뎁스1이 먼저 보이게?
 }
-
 
 function createDepth2(idx) {
 	html  = '<div class="top-wrap">';
@@ -199,15 +199,69 @@ function closeDepth(n) {
 	$(".modal-navi .depth"+n).removeClass("active");
 } // 2를 보내면 2번이 리무브, 3을 보내면 3번 리무브 (뎁스 닫을때)
 
+// r  과  el 을  받는다. 
+function createPrd(r, el) {
+	for(var i=0, html=''; i<r.length; i++) {
+		html  = '<li class="prd swiper-slide" '; 
+		html += 'data-discount="'+(r[i].discount || '')+'" ';
+		html += 'data-icon=\'[';
+		if(r[i].icon && r[i].icon.length > 0) {
+			for(var j=0; j<r[i].icon.length; j++) {
+				html += '{"title": "'+r[i].icon[j].title+'", "bg": "'+r[i].icon[j].bg+'"},';
+			}
+			html = html.slice(0, -1);
+		}
+		html += ']\'>';
+		html += '<div class="icon-wrap"></div>';
+		html += '<div class="quick-wrap">';
+		html += '<i class="fa fa-eye"></i>';
+		html += '<span>Quick View</span>';
+		html += '</div>';
+		html += '<div class="img-wrap">';
+		html += '<img src="'+r[i].imgFront[0].big+'" alt="사진" class="w-100 img-front">';
+		html += '<img src="'+r[i].imgBack+'" alt="사진" class="w-100">';
+		html += '<a href="#" class="bt-white">ADD CART</a>';
+		html += '</div>';
+		html += '<div class="title-wrap">';
+		html += '<div class="title">'+r[i].title+'</div>';
+		html += '<i class="bt-like far fa-heart" onclick="$(this).addClass(\'fa\').removeClass(\'far\');"></i>';
+		html += '</div>';
+		html += '<ul class="choice-wrap">';
+		for(var j=0; j<r[i].imgFront.length; j++) {
+			html += '<li class="choice '+(j==0 ? 'active': '')+'">';
+			html += '<img src="'+r[i].imgFront[j].thumb+'" alt="thumb" class="w-100" onclick="chgImg(this, \''+r[i].imgFront[j].big+'\');">';
+			html += '</li>';
+		}
+		html += '</ul>';
+		html += '<div class="content-wrap">';
+		html += '<span class="content hover-line">'+r[i].content+'</span>';
+		html += '<span> - </span>';
+		html += '<span class="color hover-line">'+r[i].color+'</span>';
+		html += '</div>';
+		html += '<div class="price-wrap">'+r[i].price+'</div>';
+		html += '<div class="star-wrap">';
+		html += '<div class="star" data-score="'+r[i].star+'">';
+		for(var j=0; j<5; j++) html += '<i class="fa fa-star"></i>';
+		html += '<div class="mask"></div>';
+		html += '</div>';
+		html += '<a href="'+r[i].link+'" class="bt-more">MORE SIZES ABAILABLE</a>';
+		html += '</div>';
+		html += '</li>';
+		$(el).append(html);
+	}
+	renderStar();	// star
+	renderPrd();	// discount
+}
+
 
 /********* 이벤트선언 **********/
 mainBanner();	// 배너세팅
 
-$(window).scroll(onScroll); // scroll spy , window 에 3개의 이벤트를 붙였다.
-$(window).resize(onResize).trigger("resize"); // el 높이, 폭, 위치 
+$(window).scroll(onScroll); // scroll spy, window 에 3개의 이벤트를 붙였다.
+$(window).resize(onResize).trigger("resize"); // el 높이, 폭, 위치
 
 $('.top-wrapper .icon-down').click(onLangChg); // 언어선택
-$('.top-wrapper .bt-down').click(onLangSel); // 언어선택
+$('.trans-wrapper .bt-down').click(onLangSel); // 언어선택
 $('.trans-wrapper .trans-bg').click(onTransBg); // trans창 닫기
 $('.trans-wrapper .lang').click(onLangClick); // trans창 닫기
 
@@ -219,7 +273,10 @@ $.get('../json/navi-women.json', onNaviWomen); // Women 상품 가져오기
 $.get('../json/navi-kids.json', onNaviKids); // Kids 상품 가져오기
 
 $.get('../json/new-products.json', onNewProducts); // new releases 상품 가져오기
-$.get('../json/looking.json', onLooking); // Looking  생성 looking.json을 찾아서 onLooking을 실행할 것이다.
+$.get('../json/looking.json', onLooking);	// Looking  생성 looking.json을 찾아서 onLooking을 실행할 것이다.
+
+$.get('../json/prd.json', onPrd);	// prd banner 생성
+$.get('../json/collection.json', onCollection);	// collection banner 생성
 
 $(".navi-wrapper .navi").mouseenter(onNaviEnter);	// 메인네비
 $(".navi-wrapper .navi").mouseleave(onNaviLeave);	// 메인네비
@@ -230,11 +287,51 @@ $('.modal-wrapper').click(onModalWrapperClick);
 $('.modal-wrapper').find(".bt-close").click(onModalHide);
 
 
-renderStar();
-renderPrd();
-
 
 /********* 이벤트콜백 **********/
+
+function onCollection(r) {
+	createPrd(r, '.collection-wrap .swiper-wrapper');
+	var swiper = new Swiper('.collection-wrap.swiper-container', {
+		slidesPerView: 1,
+		loop: true,
+		navigation: {
+			nextEl: '.collection-wrap .bt-next',
+			prevEl: '.collection-wrap .bt-prev',
+		},
+		breakpoints: {
+			576: {
+				slidesPerView: 2
+			},
+			768: {
+				slidesPerView: 3
+			}
+		}
+	});
+}
+
+function onPrd(r) {
+	createPrd(r, '.prd-wrap');
+	var swiper = new Swiper('.prd-wrapper.swiper-container', {
+		slidesPerView: 1,
+		loop: true,
+		navigation: {
+			nextEl: '.prd-wrapper .bt-next',
+			prevEl: '.prd-wrapper .bt-prev',
+		},
+		breakpoints: {
+			576: {
+				slidesPerView: 2
+			},
+			768: {
+				slidesPerView: 3
+			},
+			992: {
+				slidesPerView: 4
+			},
+		}
+	});
+}
 
 function onLooking(r) {
 	for(var i=0, html=''; i<r.length; i++) {
@@ -259,9 +356,9 @@ function onModalWrapperClick(e) { //여기서 e  는 event 인자를 써먹은 �
 
 function onModalShow(e) {
 	e.preventDefault();	// 기본이벤트 a니까 href의 기능(기본기능)을 막는다. preventDefault는 자바스크립트의 기본 옵션이다.
-	$(".modal-container").css({"display": "block"});// 디스플레이 논 되어 있던 것을 블럭으로 바꾸고( 꺼진 기능 켜주고)
+	$(".modal-container").css({"display": "block"}); // 디스플레이 논 되어 있던 것을 블럭으로 바꾸고( 꺼진 기능 켜주고)
 	$(".modal-container").css("opacity");//오퍼시티가 0인 것을 인식시켜준 후
-	$(".modal-container").addClass('active');//액티브를 줘서 오퍼시티 1이 먹게.
+	$(".modal-container").addClass('active'); //액티브를 줘서 오퍼시티 1이 먹게.
 	$("body").addClass("hide"); //그래야 body가 height=100vh를 갖고 오버플로우를 먹는다. 그러므로 스크롤을 죽이게 된다.
 	$($(this).data('modal')).addClass("active");
 	if($(this).data('modal') === '.modal-navi') createMoNavi();
@@ -273,7 +370,7 @@ function onModalHide(e) {
 	$('.modal-wrapper').removeClass("active");
 	setTimeout(function(){
 		$(".modal-container").css({"display": "none"});
-		$("body").removeClass("hide"); //리무브클래스 하이드가 되면서 스크롤은 다시 생긴다.
+		$("body").removeClass("hide");//리무브클래스 하이드가 되면서 스크롤은 다시 생긴다.
 	}, 300); //0.3초 이후에 이 함수({}안의)를 실행해라
 }
 
@@ -290,7 +387,7 @@ function onScroll(e) {
 
 function onSub2Enter() {
 	$(this).find('.sub-wrapper2').stop().slideDown(300);
-} // 내 안에 있는 .sub-wrapper2를 찾아서 다운시켜라
+}// 내 안에 있는 .sub-wrapper2를 찾아서 다운시켜라
 
 function onSub2Leave() {
 	$(this).find('.sub-wrapper2').stop().slideUp(300);
@@ -358,7 +455,7 @@ function onNaviSales(r) {
 		html += '<div class="img-wrap" style="background-image: url('+r.depth2[i].src+'); order: '+i%2+'">';
 		html += '</div>';
 		html += '<ul class="brand-link">';
-		html += '<li class="sub-navi bold">'+r.depth2[i].company+'</li>';
+		html += '<li class="sub-navi bold">'+r.depth2[i].name+'</li>';
 		for(var j=0; j<r.depth2[i].depth3.length; j++) {
 			html += '<li class="sub-navi hover-line">';
 			html += '<a href="'+r.depth2[i].depth3[j].link+'">'+r.depth2[i].depth3[j].name+'</a>';
@@ -379,7 +476,7 @@ function onNewProducts(r) {
 		html += '<div class="content-wrap">';
 		html += '<h4 class="title">'+r[i].title+'</h4>';
 		html += '<p class="summary">'+r[i].summary+'</p>';
-		html += '<div class="star">';
+		html += '<div class="star" data-score="'+r[i].star+'">';
 		for(var j=0; j<5; j++) html += '<i class="fa fa-star"></i>';
 		if(Number(r[i].star) > 0) html += '<div class="mask"></div>';
 		html += '</div>';
@@ -392,8 +489,7 @@ function onNewProducts(r) {
 		html += '</div>';
 		html += '</div>';
 		$slide = $(html).appendTo(".navi-new .swiper-wrapper");
-		if(Number(r[i].star) > 0) $slide.find(".star > i").addClass("active");
-		$slide.find(".mask").css("left", r[i].star * 20 + "%");
+		renderStar();
 	}
 	var swiper = new Swiper('#newSlide .swiper-container', {
 		slidesPerView: 4,
@@ -407,23 +503,23 @@ function onNewProducts(r) {
 		},
 	});
 }
-
 function onLangChg() {
 	$(".trans-wrapper").stop().slideToggle(200);
-	$(".trans-wrapper .lang-sel").stop().slideUp(200); //trans-wrapper 가 들어가든 나오든 밑에 .lang-sel 은 없어야 하니깐 업문장 넣어주기(안넣어주면 다시 trans-wrapper 를 클릭해서 내렸을때도 그대로 있다.)
-}
+	$(".trans-wrapper .lang-sel").stop().slideUp(200);
+	//trans-wrapper 가 들어가든 나오든 밑에 .lang-sel 은 없어야 하니깐 업문장 넣어주기(안넣어주면 다시 trans-wrapper 를 클릭해서 내렸을때도 그대로 있다.)
+} 
 function onLangSel() {
 	$(".trans-wrapper .lang-sel").stop().slideUp(200);
 	console.log($(this).next());
 	if($(this).next().css("display") === 'none') $(this).next().stop().slideDown(200); //먼저 나의 바로 옆에 있는 놈의 display속성을 읽어들이고,
-} //내 밑에 있는 놈이 보이는 상태니 ? 안보이는 상태니? , 즉 내 옆 애가 안보이면 내 옆에 있는 놈만 슬라이드 다운 시켜 보이게하라.
+}  //내 밑에 있는 놈이 보이는 상태니 ? 안보이는 상태니? , 즉 내 옆 애가 안보이면 내 옆에 있는 놈만 슬라이드 다운 시켜 보이게하라.
 function onLangClick() {
 	var $container = $(this).parent().parent().parent();
 	var lang = $(this).text(); //변수에 랭귀지를 넣어 나의 텍스트를 읽어들이면,
-	var bg = $(this).prev().css("background-image");//나의 이전에(앞에) 있는 놈에 이미지를 불러온다.
+	var bg = $(this).prev().css("background-image"); //나의 이전에(앞에) 있는 놈에 이미지를 불러온다.
 
-	//여기서 나,this는 ul class .lang을 의미하며 그 앞에는 디브 class .flag에 백그라운드 이미지(국기이미지)들어가 있음
-	$container.find('.lang').removeClass('active');//컨데이너에 있는 랭을 찾아서 액티브를 리무브하고
+		//여기서 나,this는 ul class .lang을 의미하며 그 앞에는 디브 class .flag에 백그라운드 이미지(국기이미지)들어가 있음
+	$container.find('.lang').removeClass('active'); //컨데이너에 있는 랭을 찾아서 액티브를 리무브하고
 	$(this).addClass('active'); //나만 액티브를 가질거야.(텍스트 밑에 라인 생기는거)
 	$container.find('.flag-now').css("background-image", bg); //$container 안에서 .flag-now 를 찾아서 그놈의 css에 있는 background-image를 bg로 바꿔라
 	$container.find('.lang-now').text(lang); //.lang-now'를 찾아서 텍스트를 lang으로 넣어라.

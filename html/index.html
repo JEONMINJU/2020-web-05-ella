@@ -81,7 +81,7 @@
 					<div>FLASH SALE</div>
 					<div>FROM $29</div>
 				</div>
-				<a href="#" class="bt-login modal-trigger" data-modal=".modal-login"><!-- [ data-이름지정 ] <=data set  -->
+				<a href="#" class="bt-login modal-trigger" data-modal=".modal-login">
 					<span class="hover-line">Login</span>
 					<i class="fa fa-user-circle"></i>
 				</a>
@@ -186,14 +186,14 @@
 	</header>
 	<!-- .header-wrapper // -->
 
-	<!-- .main-wrapper --> 
-	<section class="main-wrapper swiper-container"> <!--  swiper-container-->
+	<!-- .main-wrapper -->
+	<section class="main-wrapper swiper-container"><!--  swiper-container-->
 		<div class="banner-wrapper swiper-wrapper"> <!-- swiper-wrapper -->
-			<div class="banner-wrap swiper-slide"> <!--  swiper-slide-->
-				<img src="../img/slide1.jpg" alt="배너" class="img w-100"> <!--  w-100 내 부모 크기에 맞춰서 줄어들게(창이 줄면 이미지가 같이 줄어들게)-->
+			<div class="banner-wrap swiper-slide"><!--  swiper-slide-->
+				<img src="../img/slide1.jpg" alt="배너" class="img w-100"><!--  w-100 내 부모 크기에 맞춰서 줄어들게(창이 줄면 이미지가 같이 줄어들게)-->
 				<div class="slogan-wrapper"><!-- 슬로건 배너 화이트 , swiper-slide 포지션 rel를 가지고 있어서 중복으로 주지 않고 바로 abs띄우기-->
 					<div class="slogan-wrap"><!-- 보더를 가질 애 -->
-						<h4 class="title-sub">NEW COLLECTION</h4><!-- 시멘틱 태그 -->
+						<h4 class="title-sub">NEW COLLECTION</h4>
 						<h3 class="title">World of Denim</h3>
 						<p class="summary">Maxime placeat facere possimus voluptas assumenda.</p>
 						<a href="#" class="bt-link">SHOP DENIM</a>
@@ -215,7 +215,7 @@
 				<img src="../img/slide3.jpg" alt="배너" class="img w-100">
 				<div class="slogan-wrapper">
 					<div class="slogan-wrap">
-						<h4 class="title-sub">NEW COLLECTION</h4>
+						<h4 class="title-sub">NEW COLLECTION</h4><!-- 시멘틱 태그 -->
 						<h3 class="title">World of Outer</h3>
 						<p class="summary">Maxime placeat facere possimus voluptas assumenda.</p>
 						<a href="#" class="bt-link">SHOP DENIM</a>
@@ -223,7 +223,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="pager-wrapper"> 
+		<div class="pager-wrapper">
 			<div class="bt-arrow bt-prev">〈</div>
 			<div class="pager-wrap"></div><!-- 스와이퍼 가져다 쓸때 페이져레퍼는 따로 만들어봤자 의미 없다. 알아서 만들어줌 -->
 			<div class="bt-arrow bt-next">〉</div>
@@ -245,9 +245,9 @@
 		<div class="title-link tc">
 			<a href="#">VIEW ALL</a>
 		</div>
-		<div class="prd-wrapper wrapper">
-			<ul class="prd-wrap">
-				<li class="prd" data-discount="-11%" data-icon='[{"title": "NEW", "bg": "#293355"}, {"title": "BUNDLE", "bg": "#333"}]'>
+		<div class="prd-wrapper swiper-container wrapper">
+			<ul class="prd-wrap swiper-wrapper">
+				<!-- <li class="prd" data-discount="-11%" data-icon='[{"title": "NEW", "bg": "#293355"}, {"title": "BUNDLE", "bg": "#333"}]'>
 					<div class="icon-wrap"></div>
 					<div class="quick-wrap">
 						<i class="fa fa-eye"></i>
@@ -275,7 +275,8 @@
 					</ul>
 					<div class="content-wrap">
 						<span class="content hover-line">Dinterdum pretium de condimentus</span>
-						<span class="color hover-line"> - white</span>
+						<span> - </span>
+						<span class="color hover-line">white</span>
 					</div>
 					<div class="price-wrap">$189.00</div>
 					<div class="star-wrap">
@@ -289,103 +290,10 @@
 						</div>
 						<a href="#" class="bt-more">MORE SIZES ABAILABLE</a>
 					</div>
-				</li>
-				<li class="prd" data-discount="-20%" data-icon='[{"title": "NEW", "bg": "#293355"}]'>
-					<div class="icon-wrap"></div>
-					<div class="quick-wrap">
-						<i class="fa fa-eye"></i>
-						<span>Quick View</span>
-					</div>
-					<div class="img-wrap">
-						<img src="../img/pic1.jpg" alt="사진" class="w-100 img-front">
-						<img src="../img/pic2.jpg" alt="사진" class="w-100">
-						<a href="#" class="bt-white">ADD CART</a>
-					</div>
-					<div class="title-wrap">
-						<div class="title">MARC</div>
-						<i class="bt-like far fa-heart" onclick="$(this).addClass('fa').removeClass('far');"></i>
-					</div>
-					<ul class="choice-wrap">
-						<li class="choice active">
-							<img src="../img/image (12).jpg" alt="thumb" class="w-100" onclick="chgImg(this, '../img/pic1.jpg');">
-						</li>
-						<li class="choice">
-							<img src="../img/image (11).jpg" alt="thumb" class="w-100" onclick="chgImg(this, '../img/pic7.jpg');">
-						</li>
-						<li class="choice">
-							<img src="../img/image (10).jpg" alt="thumb" class="w-100" onclick="chgImg(this, '../img/pic5.jpg');">
-						</li>
-					</ul>
-					<div class="content-wrap">
-						<span class="content hover-line">Dinterdum pretium de condimentus</span>
-						<span class="color hover-line"> - white</span>
-					</div>
-					<div class="price-wrap">$189.00</div>
-					<div class="star-wrap">
-						<div class="star" data-score="4.6">
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<div class="mask"></div>
-						</div>
-						<a href="#" class="bt-more">MORE SIZES ABAILABLE</a>
-					</div>
-				</li>
-				<li class="prd">
-					<div class="icon-wrap"></div>
-					<div class="quick-wrap">
-						<i class="fa fa-eye"></i>
-						<span>Quick View</span>
-					</div>
-					<div class="img-wrap">
-						<img src="../img/pic1.jpg" alt="사진" class="w-100 img-front">
-						<img src="../img/pic2.jpg" alt="사진" class="w-100">
-						<a href="#" class="bt-white">ADD CART</a>
-					</div>
-					<div class="title-wrap">
-						<div class="title">MARC</div>
-						<i class="bt-like far fa-heart" onclick="$(this).addClass('fa').removeClass('far');"></i>
-					</div>
-					<ul class="choice-wrap">
-						<li class="choice active">
-							<div>
-								<img src="../img/image (12).jpg" alt="thumb" class="w-100" onclick="chgImg(this, '../img/pic1.jpg');">
-							</div>
-							<div class="popper">White</div>
-						</li>
-						<li class="choice">
-							<div>
-								<img src="../img/image (11).jpg" alt="thumb" class="w-100" onclick="chgImg(this, '../img/pic7.jpg');">
-							</div>
-							<div class="popper">Blue</div>
-						</li>
-						<li class="choice">
-							<div>
-								<img src="../img/image (10).jpg" alt="thumb" class="w-100" onclick="chgImg(this, '../img/pic5.jpg');">
-							</div>
-							<div class="popper">Orange</div>
-						</li>
-					</ul>
-					<div class="content-wrap">
-						<span class="content hover-line">Dinterdum pretium de condimentus</span>
-						<span class="color hover-line"> - white</span>
-					</div>
-					<div class="price-wrap">$189.00</div>
-					<div class="star-wrap">
-						<div class="star" data-score="4.6">
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<div class="mask"></div>
-						</div>
-						<a href="#" class="bt-more">MORE SIZES ABAILABLE</a>
-					</div>
-				</li>
+				</li> -->
 			</ul>
+			<div class="bt-prev bt">〈</div>
+			<div class="bt-next bt">〉</div>
 		</div>
 	</section>
 	<!-- .best-wrapper // -->
@@ -414,50 +322,163 @@
 	</section>
 	<!-- .best-wrapper // -->
 
+	<!-- .member-wrapper -->
+	<div class="member-wrapper">
+		<h3 class="title">Explore our Membership</h3>
+		<p class="content">Get that new clothes month with a monthly membership. We have a plan that's right for you and your budget.</p>
+		<a href="#" class="bt-white2">LEARN MORE</a>
+	</div>
+	<!-- .member-wrapper // -->
 
-
-		<!-- .modal-container -->
-		<div class="modal-container">
-			<div class="modal-wrapper type-rt modal-login">
-				<div class="close-wrap">
-					<button class="bt-close"><i class="fa fa-times"></i> CLOSE</button>
+	<!-- .featured-wrapper -->
+	<div class="featured-wrapper">
+		<h2 class="title-main tc">Featured Product</h2>
+		<div class="title-link tc">
+			<a href="#">VIEW DETAIL</a>
+		</div>
+		<div class="featured-wrap wrapper">
+			<img src="../img/Feature-image-left_970x.jpg" alt="featured">
+			<div class="banner-wrap">
+				<div class="banner">
+					<div class="title">Winter’s nigh</div>
+					<p class="content">Maxime placeat facere possimus voluptas assumenda.</p>
+					<div class="bts">
+						<a href="#" class="hover-line">SHOP COLLECTION</a>
+						<a href="#" class="hover-line">ALL WINTER CLOTHING</a>
+					</div>
 				</div>
-				<h2 class="title-main">LOGIN</h2>
-				<form action="#">
-					<label for="userEmail">Email Address <i class="red">*</i></label>
-					<input type="text" id="userEmail" name="userEmail" class="input-default" placeholder="Email Address">
-					<label for="userPass">Password <i class="red">*</i></label>
-					<input type="text" id="userPass" name="userPass" class="input-default" placeholder="Password">
-					<button class="bt-blue">LOGIN</button>
-				</form>
-				<p>Forgot your password?</p>
-				<a href="#" class="bt-white">CREATE AN ACCOUNT</a>
 			</div>
-			<div class="modal-wrapper type-rt modal-cart">
-				<div class="close-wrap">
-					<button class="bt-close"><i class="fa fa-times"></i> CLOSE</button>
+			<div class="prd" data-discount="-11%" data-icon='[{"title": "NEW", "bg": "#293355"}, {"title": "BUNDLE", "bg": "#333"}]'>
+				<div class="icon-wrap"></div>
+				<div class="quick-wrap">
+					<i class="fa fa-eye"></i>
+					<span>Quick View</span>
 				</div>
-				<h2 class="title-main">Your Bag</h2>
-				<p style="text-align: center;">Your cart is currently empty.</p>
-				<a href="#" class="bt-white bt-border">CONTINUE SHOPPING</a>
-			</div>
-			<div class="modal-wrapper type-ct modal-wish">
-				<div class="close-wrap2 bt-close">
-					<i class="fa fa-times"></i>
+				<div class="img-wrap">
+					<img src="../img/pic1.jpg" alt="사진" class="w-100 img-front">
+					<img src="../img/pic2.jpg" alt="사진" class="w-100">
+					<a href="#" class="bt-white">ADD CART</a>
 				</div>
-				<h2 class="title-main tc">Wish list</h2>
-				<p class="tc">Your cart is currently empty.</p>
-				<a href="#" class="bt-white bt-border">CONTINUE SHOPPING</a>
-			</div>
-			<div class="modal-wrapper type-lt modal-navi">
-				<div class="depth depth1">
-					
+				<div class="title-wrap">
+					<div class="title">MARC</div>
+					<i class="bt-like far fa-heart" onclick="$(this).addClass('fa').removeClass('far');"></i>
 				</div>
-				<div class="depth depth2"></div>
-				<div class="depth depth3"></div>
+				<ul class="choice-wrap">
+					<li class="choice active">
+						<img src="../img/image (12).jpg" alt="thumb" class="w-100" onclick="chgImg(this, '../img/pic1.jpg');">
+					</li>
+					<li class="choice">
+						<img src="../img/image (11).jpg" alt="thumb" class="w-100" onclick="chgImg(this, '../img/pic7.jpg');">
+					</li>
+					<li class="choice">
+						<img src="../img/image (10).jpg" alt="thumb" class="w-100" onclick="chgImg(this, '../img/pic5.jpg');">
+					</li>
+				</ul>
+				<div class="content-wrap">
+					<span class="content hover-line">Dinterdum pretium de condimentus</span>
+					<span> - </span>
+					<span class="color hover-line">white</span>
+				</div>
+				<div class="price-wrap">$189.00</div>
+				<div class="star-wrap">
+					<div class="star" data-score="4.6">
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<div class="mask"></div>
+					</div>
+					<a href="#" class="bt-more">MORE SIZES ABAILABLE</a>
+				</div>
 			</div>
 		</div>
-		<!-- .modal-container // -->
-		<script src="../js/index.js"></script>
-	</body>
-	</html>
+	</div>
+	<!-- .featured-wrapper // -->
+
+
+	<!-- .collection-wrap -->
+	<div class="collection-wrapper wrapper">
+		<div class="title-wrap">
+			<h2 class="title-main">Also in<br>collection</h2>
+			<div class="title-link">
+				<a href="#">VIEW ALL</a>
+			</div>
+		</div>
+		<div class="collection-wrap swiper-container">
+			<ul class="swiper-wrapper">
+			</ul>
+			<div class="bt-prev bt">〈</div>
+			<div class="bt-next bt">〉</div>
+		</div>
+	</div>
+	<!-- .collection-wrap // -->
+
+
+	<!-- .etc-wrapper -->
+	<div class="etc-wrapper">
+		<div class="tailer-wrap">
+			<div class="img-wrap">
+				<img src="../img/icon20.png" alt="파이프" class="mx-100">
+			</div>
+			<div class="title">Tailor-made with passion</div>
+			<p class="content">We use only the very best materials and manufacturers. If our product rips or frays, we’ll make it right.</p>
+			<a href="#" class="hover-line bt-link">LEARN MORE</a>
+		</div>
+		<div class="chat-wrap">
+			<div class="img-wrap">
+				<img src="../img/icon21.png" alt="콧수염" class="mx-100">
+			</div>
+			<div class="title">Chat with an expert</div>
+			<p class="content">Question or concern? Not sure what to get? Don’t know how to put on a duvet cover? Our team is here to help!</p>
+			<a href="#" class="hover-line bt-link">CONTACT US</a>
+		</div>
+	</div>
+	<!-- .etc-wrapper // -->
+
+
+	<!-- .modal-container -->
+	<div class="modal-container">
+		<div class="modal-wrapper type-rt modal-login">
+			<div class="close-wrap">
+				<button class="bt-close"><i class="fa fa-times"></i> CLOSE</button>
+			</div>
+			<h2 class="title-main">LOGIN</h2>
+			<form action="#">
+				<label for="userEmail">Email Address <i class="red">*</i></label>
+				<input type="text" id="userEmail" name="userEmail" class="input-default" placeholder="Email Address">
+				<label for="userPass">Password <i class="red">*</i></label>
+				<input type="text" id="userPass" name="userPass" class="input-default" placeholder="Password">
+				<button class="bt-blue">LOGIN</button>
+			</form>
+			<p>Forgot your password?</p>
+			<a href="#" class="bt-white">CREATE AN ACCOUNT</a>
+		</div>
+		<div class="modal-wrapper type-rt modal-cart">
+			<div class="close-wrap">
+				<button class="bt-close"><i class="fa fa-times"></i> CLOSE</button>
+			</div>
+			<h2 class="title-main">Your Bag</h2>
+			<p style="text-align: center;">Your cart is currently empty.</p>
+			<a href="#" class="bt-white bt-border">CONTINUE SHOPPING</a>
+		</div>
+		<div class="modal-wrapper type-ct modal-wish">
+			<div class="close-wrap2 bt-close">
+				<i class="fa fa-times"></i>
+			</div>
+			<h2 class="title-main tc">Wish list</h2>
+			<p class="tc">Your cart is currently empty.</p>
+			<a href="#" class="bt-white bt-border">CONTINUE SHOPPING</a>
+		</div>
+		<div class="modal-wrapper type-lt modal-navi">
+			<div class="depth depth1">
+				
+			</div>
+			<div class="depth depth2"></div>
+			<div class="depth depth3"></div>
+		</div>
+	</div>
+	<!-- .modal-container // -->
+	<script src="../js/index.js"></script>
+</body>
+</html>

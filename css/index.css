@@ -80,7 +80,7 @@ h2.title-main {font-family: 'DM Serif Display', serif; font-size: 2.5em; letter-
 .prd .quick-wrap i {display: inline-block;}
 .prd .quick-wrap span {display: inline-block; transition: all 0.3s; white-space: nowrap; position: absolute; opacity: 0; right: 0.75em;}
 .prd .quick-wrap:hover {padding-right: 6.5em;}
-.prd .quick-wrap:hover span {opacity: 1;}
+.prd .quick-wrap:hover span {opacity: 1;} 
 
 
 
@@ -225,10 +225,12 @@ h2.title-main {font-family: 'DM Serif Display', serif; font-size: 2.5em; letter-
 
 /************ best-wrapper *************/
 .best-wrapper {padding: 4em 0;}
-.prd-wrapper {margin-top: 3em;}
+.prd-wrapper {margin-top: 3em; position: relative;}
 .prd-wrapper .prd-wrap {display: flex;}
 .prd-wrapper .prd-wrap .prd {width: 25%; flex-shrink: 0; flex-grow: 0;}
-
+.prd-wrapper .bt {font-size: 4em; color: #f9f9f9; text-shadow: 0 0 0.25em rgba(0,0,0,0.5); position: absolute; top: calc(50% - 2em); z-index: 6; cursor: pointer;}
+.prd-wrapper .bt-prev {left: 0;}
+.prd-wrapper .bt-next {right: 0;}
 
 
 
@@ -240,6 +242,47 @@ h2.title-main {font-family: 'DM Serif Display', serif; font-size: 2.5em; letter-
 .brand-wrap .brand .bt-white {position: absolute; width: 70%; left: 15%; bottom: 10%; z-index: 2; padding: 2em 0;}
 .brand-wrap .brand img {transition: all 1s;}
 .brand-wrap .brand:hover img {transform: scale(1.1); opacity: .7;}
+
+
+/************ member-wrapper *************/
+.member-wrapper {background-color: #293356; text-align: center; color: #f9f9f9; padding: 4em 0;}
+.member-wrapper h3.title {font-size: 1.75em; font-family: 'DM Serif Display', serif;}
+.member-wrapper .content {padding: 3em 0; color: #ccc; font-size: 0.925em;}
+.member-wrapper a {padding: 2em 6em; background-color: #fff; color: #293356; display: inline-block; font-weight: bold;}
+
+/************ featured-wrapper *************/
+.featured-wrapper {padding: 4em 0;}
+.featured-wrap {margin-top: 3em; position: relative; overflow: hidden;}
+.featured-wrap > img {max-height: 100%;}
+.featured-wrap .prd {width: 274px; position: absolute; top: 2%; right: 0; box-shadow: 0 0 8px rgba(0,0,0,.3);}
+.featured-wrap .banner-wrap {position: absolute; left: 2%; bottom: 2%; padding: 0.5em; background-color: #fff;}
+.featured-wrap .banner-wrap .banner {border: 3px solid #bbb; padding: 1.5em;}
+.featured-wrap .banner-wrap .title {font-size: 3em; font-family: 'DM Serif Display', serif; margin-bottom: 0.5em; color: #222;}
+.featured-wrap .banner-wrap .content {margin-bottom: 2em;}
+.featured-wrap .banner-wrap .bts {display: flex; justify-content: space-between;}
+
+
+/************ collection-wrapper *************/
+.collection-wrapper {padding: 4em 0; display: flex; align-items: center; flex-wrap: wrap;}
+.collection-wrapper > .title-wrap {flex: 25% 0 0; padding: 0 2%;}
+.collection-wrapper > .collection-wrap {flex: 75% 0 0; position: relative;}
+.collection-wrapper > .collection-wrap .swiper-slide {padding: 0 1%;}
+.collection-wrapper .bt {font-size: 4em; color: #f9f9f9; text-shadow: 0 0 0.25em rgba(0,0,0,0.5); position: absolute; top: 50%; transform: translateY(-50%); z-index: 6; cursor: pointer;}
+.collection-wrap .bt-prev {left: 0;}
+.collection-wrap .bt-next {right: 0;}
+
+
+/************ etc-wrapper *************/
+.etc-wrapper {display: flex; flex-wrap: wrap; text-align: center;}
+.etc-wrapper > div {flex: 50% 0 0; padding: 5% 10%; }
+.etc-wrapper > .tailer-wrap {background-color: #e0e2ea;}
+.etc-wrapper > .chat-wrap {background-color: #efe8e0;}
+.etc-wrapper .title {font-size: 1.75em; font-family: 'DM Serif Display', serif; margin: 1em 0;}
+.etc-wrapper .content {margin: 1.5em 0 3em 0; line-height: 1.75;}
+.etc-wrapper .hover-line {color: #ba7a2d; font-weight: bold;}
+.etc-wrapper .hover-line::after {border-color: #ba7a2d;}
+
+
 
 
 /************ 모달 *************/
@@ -296,13 +339,19 @@ h2.title-main {font-family: 'DM Serif Display', serif; font-size: 2.5em; letter-
 }
 
 @media screen and (max-width: 991px) {
-
+	.collection-wrapper > .title-wrap {flex: 100% 0 0; text-align: center; margin-bottom: 3em;}
+	.collection-wrapper > .collection-wrap {flex: 100% 0 0;}
 }
 
 @media screen and (max-width: 767px) {
 	.main-wrapper .pager-wrapper {font-size: 0.5em;}/* 1em 에서 반으로 줄어라 */
 	.main-wrapper .slogan-wrapper {display: none;}
 	.looking-wrapper .spot-wrapper > .spot {flex: 33.3333% 0 0;}
+	.featured-wrap {overflow: visible;}
+	.featured-wrap > img {max-height: auto; max-width: 100%;}
+	.featured-wrap .banner-wrap {width: 90%; position: static; margin: auto; transform: translateY(-40%);}
+	.featured-wrap .prd {width: 92%; max-width: 320px; margin: auto; position: relative; margin-top: -10%;}
+	.etc-wrapper > div {flex: 100% 0 0; padding: 10%;}
 }
 
 @media screen and (max-width: 575px) {
