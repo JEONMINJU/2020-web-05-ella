@@ -27,10 +27,10 @@ function chgImg(el, src) {
 }
 
 function renderStar() {
-	$(".star").each(function(i){
-		var score = Number($(this).data('score'));
-		if(score > 0) $(this).find("i").addClass("active");
-		$(this).find(".mask").css("left", score * 20 + "%");
+	$(".star").each(function(i){ //나의 페이지에 있는 모든 .star 각각에 적용하고 싶을땐 .each (모든 스타 각각에게 이 함수를 실행해줄게요가 이치)
+		var score = Number($(this).data('score')); //여기서 스코어를 받아서
+		if(score > 0) $(this).find("i").addClass("active");  // score가 0보다 크면,현재 선택된 스타 안에 있는 i 태그에 액티브를 주고,
+		$(this).find(".mask").css("left", score * 20 + "%"); //현재 선택된 mask	의 값을 찾아서 스코어 곱하기 20을 해달라
 	});
 }
 
@@ -286,9 +286,13 @@ $(".modal-container").click(onModalHide);
 $('.modal-wrapper').click(onModalWrapperClick);
 $('.modal-wrapper').find(".bt-close").click(onModalHide);
 
-
+$('.footer-wrapper .bt-show').click(onFooterClick);
 
 /********* 이벤트콜백 **********/
+function onFooterClick() {
+	$(this).toggleClass('active');
+	$(this).parent().next().stop().slideToggle(500);
+}
 
 function onCollection(r) {
 	createPrd(r, '.collection-wrap .swiper-wrapper');
