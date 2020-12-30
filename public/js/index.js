@@ -287,12 +287,12 @@ $('.modal-wrapper').click(onModalWrapperClick);
 $('.modal-wrapper').find(".bt-close").click(onModalHide);
 
 $('.footer-wrapper .bt-show').click(onFooterClick);
-
+ 
 /********* 이벤트콜백 **********/
 function onFooterClick() {
 	$(this).toggleClass('active');
-	$(this).parent().next().stop().slideToggle(500);
-}
+	$(this).parent().next().stop().slideToggle(500); 
+} // 내 부모의 밑에 있는 애를 토글
 
 function onCollection(r) {
 	createPrd(r, '.collection-wrap .swiper-wrapper');
@@ -382,6 +382,11 @@ function onResize(e) {
 	topHeight = $('.top-wrapper').outerHeight(); //topHeigh 는 .top-wrapper 의 outerHeight 값을 구한다.
 	logoHeight = $('.logo-wrapper').outerHeight();
 	winWidth = $(window).width(); //리사이즈 될때마다 winWidth 를 구한다. window의 width 값을 구한다.
+
+	  if(winWidth > 767) {
+			  $(".footer-wrap > div > ul").attr("style, ");
+			  $(".footer-wrap .bt-show").removeClass("active");
+		}
 }
 
 function onScroll(e) {
