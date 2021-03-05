@@ -438,7 +438,7 @@ function onNaviNew(r) {
 	$(".navi.navi-new").prepend(createNavi(r));
 	var html = createSub(r);
 	html += '<div class="sub-banner">';
-	html += '	<img src="../img/mega-menu-4_460x.jpg" alt="배너" class="mw-100">';
+	html += '	<img src="../img/st-banner.jpg" alt="배너" class="mw-100">';
 	html += '</div>';
 	$(".navi.navi-new").find('.sub-navi-wrapper').append(html);
 }

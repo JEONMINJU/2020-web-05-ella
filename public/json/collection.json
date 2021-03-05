@@ -9,7 +9,7 @@
 		"quickLink": "#",
 		"imgBack": "../img/pic2.jpg",
 		"imgFront": [
-			{"thumb": "../img/image (12).jpg", "big": "../img/pic1.jpg"},
+			{"thumb": "../img/pic3.jpg", "big": "../img/pic1.jpg"},
 			{"thumb": "../img/image (11).jpg", "big": "../img/pic7.jpg"},
 			{"thumb": "../img/image (10).jpg", "big": "../img/pic5.jpg"},
 			{"thumb": "../img/image (31).jpg", "big": "../img/pic11.jpg"}

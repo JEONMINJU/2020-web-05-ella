@@ -1,37 +1,37 @@
 [{
 	"id": 1,
 	"link": "#",
-	"title": "MARC",
+	"title": "Guildo R",
 	"summary": "Dinterdum Pretium De Condimentus",
 	"star": 5,
-	"originalPrice": 199,
-	"salePrice": 139,
+	"originalPrice": 108.00,
+	"salePrice": 95.9,
 	"origin": "from",
 	"src": "../img/pic1.jpg"
 }, {
 	"id": 2,
 	"link": "#",
-	"title": "G-STAR",
+	"title": "Minquiers",
 	"summary": "Dinterdum Pretium De Condimentus",
 	"star": 4.5,
-	"originalPrice": 189,
-	"salePrice": 0,
+	"originalPrice": 98.00,
+	"salePrice": 87.2,
 	"origin": "",
-	"src": "../img/pic2.jpg"
+	"src": "../img/pic3(4).jpg"
 }, {
 	"id": 3,
 	"link": "#",
-	"title": "CHANEL",
+	"title": "Unisex Minquier",
 	"summary": "Dinterdum Pretium De Condimentus",
-	"star": 0,
-	"originalPrice": 215,
-	"salePrice": 192.1,
+	"star": 2,
+	"originalPrice": 112.02,
+	"salePrice": 87.02,
 	"origin": "",
-	"src": "../img/pic3.jpg"
+	"src": "../img/pic9(2).jpg"
 }, {
 	"id": 4,
 	"link": "#",
-	"title": "BURBERRY",
+	"title": "Guildo t-shirt",
 	"summary": "Dinterdum Pretium De Condimentus",
 	"star": 4,
 	"originalPrice": 189,
@@ -41,17 +41,17 @@
 }, {
 	"id": 5,
 	"link": "#",
-	"title": "BURBERRY",
+	"title": "Minquiers 18",
 	"summary": "Dinterdum Pretium De Condimentus",
 	"star": 3,
-	"originalPrice": 90,
-	"salePrice": 0,
+	"originalPrice": 98.9,
+	"salePrice": 87.02,
 	"origin": "",
-	"src": "../img/pic5.jpg"
+	"src": "../img/pic12(3).jpg"
 }, {
 	"id": 6,
 	"link": "#",
-	"title": "BENJAMIN BUTTON",
+	"title": "Guildo U elbow",
 	"summary": "Dinterdum Pretium De Condimentus",
 	"star": 5,
 	"originalPrice": 189,

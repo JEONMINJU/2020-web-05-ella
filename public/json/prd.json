@@ -9,52 +9,48 @@
 		"quickLink": "#",
 		"imgBack": "../img/pic2.jpg",
 		"imgFront": [
-			{"thumb": "../img/image (12).jpg", "big": "../img/pic1.jpg"},
-			{"thumb": "../img/image (11).jpg", "big": "../img/pic7.jpg"},
-			{"thumb": "../img/image (10).jpg", "big": "../img/pic5.jpg"},
-			{"thumb": "../img/image (31).jpg", "big": "../img/pic11.jpg"}
+			{"thumb": "../img/pic1.jpg", "big": "../img/pic1.jpg"},
+			{"thumb": "../img/pic16.jpg", "big": "../img/pic16.jpg"},
+			{"thumb": "../img/pic17.jpg", "big": "../img/pic17.jpg"}
 		],
-		"content": "Dinterdum pretium de condimentus",
-		"color": "white",
-		"price": "$189.00",
-		"star": "4.6"
+		"content": "Guildo line t-shirt. 100% tight woven cotton.",
+		"color": "pink",
+		"price": "$95.9",
+		"star": "5.0"
 	},
 	{
 		"discount": "-5%",
 		"icon": [
-			{"title": "HOT", "bg": "pink"},
+			{"title": "HOT", "bg": "lightblue"},
 			{"title": "NEW", "bg": "#293355"}
 		],
 		"link": "#",
 		"quickLink": "#",
 		"imgBack": "../img/pic5.jpg",
 		"imgFront": [
-			{"thumb": "../img/image (10).jpg", "big": "../img/pic6.jpg"},
-			{"thumb": "../img/image (13).jpg", "big": "../img/pic7.jpg"},
-			{"thumb": "../img/image (14).jpg", "big": "../img/pic8.jpg"},
-			{"thumb": "../img/image (15).jpg", "big": "../img/pic9.jpg"}
+			{"thumb": "../img/pic6.jpg", "big": "../img/pic6.jpg"}
 		],
-		"content": "Dinterdum pretium de condimentus",
-		"color": "pink",
-		"price": "$299.00",
+		"content": "Natual boxy fit t-shirt. Looser shoulders and wider sleeves",
+		"color": "light blue",
+		"price": "$77.08",
 		"star": "4.4"
 	},
 	{
-		"discount": "-20%",
+		"discount": "-15%",
 		"icon": [],
 		"link": "#",
 		"quickLink": "#",
-		"imgBack": "../img/pic1.jpg",
+		"imgBack": "../img/pic4.jpg",
 		"imgFront": [
-			{"thumb": "../img/image (13).jpg", "big": "../img/pic2.jpg"},
-			{"thumb": "../img/image (14).jpg", "big": "../img/pic3.jpg"},
-			{"thumb": "../img/image (15).jpg", "big": "../img/pic4.jpg"},
-			{"thumb": "../img/image (16).jpg", "big": "../img/pic5.jpg"}
+			{"thumb": "../img/pic3.jpg", "big": "../img/pic3.jpg"},
+			{"thumb": "../img/pic3(2).jpg", "big": "../img/pic3(2).jpg"},
+			{"thumb": "../img/pic3(3).jpg", "big": "../img/pic3(3).jpg"},
+			{"thumb": "../img/pic3(4).jpg", "big": "../img/pic3(4).jpg"}
 		],
-		"content": "Dinterdum pretium de condimentus",
-		"color": "green",
-		"price": "$99.00",
-		"star": "4.1"
+		"content": "Relaxed silhouette t-shirt. Casual stripe pattern. Soft 100% cotton.",
+		"color": "black / blue / navy / red",
+		"price": "$87.02",
+		"star": "3.0"
 	},
 	{
 		"discount": "-12%",
@@ -66,13 +62,12 @@
 		"quickLink": "#",
 		"imgBack": "../img/pic8.jpg",
 		"imgFront": [
-			{"thumb": "../img/image (17).jpg", "big": "../img/pic9.jpg"},
-			{"thumb": "../img/image (18).jpg", "big": "../img/pic10.jpg"},
-			{"thumb": "../img/image (19).jpg", "big": "../img/pic11.jpg"}
+			{"thumb": "../img/pic9.jpg", "big": "../img/pic9.jpg"},
+			{"thumb": "../img/pic9(2).jpg", "big": "../img/pic9(2).jpg"}
 		],
-		"content": "Dinterdum pretium de condimentus",
-		"color": "grey",
-		"price": "$399.00",
+		"content": "Easy silhouette t-shirt. Stripe pattern. ",
+		"color": "light violet / yellow",
+		"price": "$87.02",
 		"star": "4.8"
 	},
 	{
@@ -83,36 +78,34 @@
 		],
 		"link": "#",
 		"quickLink": "#",
-		"imgBack": "../img/pic7.jpg",
+		"imgBack": "../img/pic11.jpg",
 		"imgFront": [
-			{"thumb": "../img/image (19).jpg", "big": "../img/pic6.jpg"},
-			{"thumb": "../img/image (20).jpg", "big": "../img/pic7.jpg"},
-			{"thumb": "../img/image (31).jpg", "big": "../img/pic8.jpg"},
-			{"thumb": "../img/image (32).jpg", "big": "../img/pic9.jpg"}
+			{"thumb": "../img/pic10.jpg", "big": "../img/pic10.jpg"},
+			{"thumb": "../img/pic10(2).jpg", "big": "../img/pic10(2).jpg"}
 		],
-		"content": "Dinterdum pretium de condimentus",
-		"color": "orange",
-		"price": "$119.00",
-		"star": "3.9"
+		"content": "Reqular fit t-shirt. Stripe elbow patch point.",
+		"color": "light pink / yellow",
+		"price": "$104.78",
+		"star": "4.5"
 	},
 	{
-		"discount": "-8%",
+		"discount": "-30%",
 		"icon": [
 			{"title": "NEW", "bg": "#293355"},
 			{"title": "BUNDLE", "bg": "#333"}
 		],
 		"link": "#",
 		"quickLink": "#",
-		"imgBack": "../img/pic11.jpg",
+		"imgBack": "../img/pic13.jpg",
 		"imgFront": [
-			{"thumb": "../img/image (10).jpg", "big": "../img/pic2.jpg"},
-			{"thumb": "../img/image (11).jpg", "big": "../img/pic3.jpg"},
-			{"thumb": "../img/image (12).jpg", "big": "../img/pic4.jpg"},
-			{"thumb": "../img/image (13).jpg", "big": "../img/pic5.jpg"}
+			{"thumb": "../img/pic12.jpg", "big": "../img/pic12.jpg"},
+			{"thumb": "../img/pic12(2).jpg", "big": "../img/pic12(2).jpg"},
+			{"thumb": "../img/pic12(3).jpg", "big": "../img/pic12(3).jpg"},
+			{"thumb": "../img/pic12(4).jpg", "big": "../img/pic12(4).jpg"}
 		],
-		"content": "Dinterdum pretium de condimentus",
-		"color": "black",
-		"price": "$99.00",
+		"content": "Guildo R Stripe t-shirt. Genderless",
+		"color": "violet",
+		"price": "$67.13",
 		"star": "4.6"
 	}
 ]
