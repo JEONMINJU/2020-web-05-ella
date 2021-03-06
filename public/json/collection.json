@@ -1,22 +1,21 @@
 [
 	{
-		"discount": "-20%",
+		"discount": "-8%",
 		"icon": [
 			{"title": "NEW", "bg": "#293355"},
 			{"title": "BUNDLE", "bg": "#333"}
 		],
 		"link": "#",
 		"quickLink": "#",
-		"imgBack": "../img/pic2.jpg",
+		"imgBack": "../img/pic-t(1)-1.jpg",
 		"imgFront": [
-			{"thumb": "../img/pic3.jpg", "big": "../img/pic1.jpg"},
-			{"thumb": "../img/image (11).jpg", "big": "../img/pic7.jpg"},
-			{"thumb": "../img/image (10).jpg", "big": "../img/pic5.jpg"},
-			{"thumb": "../img/image (31).jpg", "big": "../img/pic11.jpg"}
+			{"thumb": "../img/pic-t(1).jpg", "big": "../img/pic-t(1).jpg"},
+			{"thumb": "../img/pic-t(1)-1.jpg", "big": "../img/pic-t(1)-1.jpg"},
+			{"thumb": "../img/pic-t(1)-2.jpg", "big": "../img/pic-t(1)-2.jpg"}
 		],
-		"content": "Dinterdum pretium de condimentus",
-		"color": "white",
-		"price": "$189.00",
+		"content": "Guildo U Elbow Patch (035)",
+		"color": "gray",
+		"price": "$112.00",
 		"star": "4.6"
 	},
 	{
@@ -27,52 +26,50 @@
 		],
 		"link": "#",
 		"quickLink": "#",
-		"imgBack": "../img/pic5.jpg",
+		"imgBack": "../img/pic-t(2)-1.jpg",
 		"imgFront": [
-			{"thumb": "../img/image (10).jpg", "big": "../img/pic6.jpg"},
-			{"thumb": "../img/image (13).jpg", "big": "../img/pic7.jpg"},
-			{"thumb": "../img/image (14).jpg", "big": "../img/pic8.jpg"},
-			{"thumb": "../img/image (15).jpg", "big": "../img/pic9.jpg"}
+			{"thumb": "../img/pic-t(2).jpg", "big": "../img/pic-t(2).jpg"},
+			{"thumb": "../img/pic-t(2)-1.jpg", "big": "../img/pic-t(2)-1.jpg"},
+			{"thumb": "../img/pic-t(2)-2.jpg", "big": "../img/pic-t(2)-2.jpg"},
+			{"thumb": "../img/pic-t(2)-3.jpg", "big": "../img/pic-t(2)-3.jpg"}
 		],
-		"content": "Dinterdum pretium de condimentus",
-		"color": "pink",
-		"price": "$399.00",
-		"star": "3.0"
+		"content": "[21SS 뉴컬러] Guildo U Elbow Patch (213)",
+		"color": "blue",
+		"price": "$104.59",
+		"star": "5.0"
 	},
 	{
-		"discount": "-20%",
+		"discount": "-5%",
 		"icon": [],
 		"link": "#",
 		"quickLink": "#",
-		"imgBack": "../img/pic1.jpg",
+		"imgBack": "../img/pic-t(3)-1.jpg",
 		"imgFront": [
-			{"thumb": "../img/image (13).jpg", "big": "../img/pic2.jpg"},
-			{"thumb": "../img/image (14).jpg", "big": "../img/pic3.jpg"},
-			{"thumb": "../img/image (15).jpg", "big": "../img/pic4.jpg"},
-			{"thumb": "../img/image (16).jpg", "big": "../img/pic5.jpg"}
+			{"thumb": "../img/pic-t(3).jpg", "big": "../img/pic-t(3).jpg"},
+			{"thumb": "../img/pic-t(3)-1.jpg", "big": "../img/pic-t(3)-1.jpg"}
 		],
-		"content": "Dinterdum pretium de condimentus",
-		"color": "green",
-		"price": "$99.00",
-		"star": "4.5"
+		"content": "[21SS 뉴컬러] Guildo U Elbow Patch (206)",
+		"color": "Melon(Melon/Astilbe)",
+		"price": "$104.59",
+		"star": "5.0"
 	},
 	{
-		"discount": "-50%",
+		"discount": "-10%",
 		"icon": [
 			{"title": "NEW", "bg": "#293355"},
 			{"title": "BUNDLE", "bg": "#333"}
 		],
 		"link": "#",
 		"quickLink": "#",
-		"imgBack": "../img/pic8.jpg",
+		"imgBack": "../img/pic-t(4)-1.jpg",
 		"imgFront": [
-			{"thumb": "../img/image (17).jpg", "big": "../img/pic9.jpg"},
-			{"thumb": "../img/image (18).jpg", "big": "../img/pic10.jpg"},
-			{"thumb": "../img/image (19).jpg", "big": "../img/pic11.jpg"}
+			{"thumb": "../img/pic-t(4).jpg", "big": "../img/pic-t(4).jpg"},
+			{"thumb": "../img/pic-t(4)-2.jpg", "big": "../img/pic-t(4)-2.jpg"},
+			{"thumb": "../img/pic-t(4)-1.jpg", "big": "../img/pic-t(4)-1.jpg"}
 		],
-		"content": "Dinterdum pretium de condimentus",
-		"color": "grey",
-		"price": "$399.00",
+		"content": "[21SS 뉴컬러] Guildo U Elbow Patch (21S)",
+		"color": "Elixir(Ecru/Marine)",
+		"price": "$118.00",
 		"star": "4.8"
 	},
 	{
@@ -83,15 +80,14 @@
 		],
 		"link": "#",
 		"quickLink": "#",
-		"imgBack": "../img/pic7.jpg",
+		"imgBack": "../img/pic-t(5)-1.jpg",
 		"imgFront": [
-			{"thumb": "../img/image (19).jpg", "big": "../img/pic6.jpg"},
-			{"thumb": "../img/image (20).jpg", "big": "../img/pic7.jpg"},
-			{"thumb": "../img/image (31).jpg", "big": "../img/pic8.jpg"},
-			{"thumb": "../img/image (32).jpg", "big": "../img/pic9.jpg"}
+			{"thumb": "../img/pic-t(5).jpg", "big": "../img/pic-t(5).jpg"},
+			{"thumb": "../img/pic-t(5)-1.jpg", "big": "../img/pic-t(5)-1.jpg"},
+			{"thumb": "../img/pic-t(5)-2.jpg", "big": "../img/pic-t(5)-2.jpg"}
 		],
-		"content": "Dinterdum pretium de condimentus",
-		"color": "orange",
+		"content": "Guildo U Elbow Patch (20B)",
+		"color": "light violet",
 		"price": "$119.00",
 		"star": "3.9"
 	},
@@ -103,16 +99,16 @@
 		],
 		"link": "#",
 		"quickLink": "#",
-		"imgBack": "../img/pic11.jpg",
+		"imgBack": "../img/pic-t(6)-1.jpg",
 		"imgFront": [
-			{"thumb": "../img/image (10).jpg", "big": "../img/pic2.jpg"},
-			{"thumb": "../img/image (11).jpg", "big": "../img/pic3.jpg"},
-			{"thumb": "../img/image (12).jpg", "big": "../img/pic4.jpg"},
-			{"thumb": "../img/image (13).jpg", "big": "../img/pic5.jpg"}
+			{"thumb": "../img/pic-t(6).jpg", "big": "../img/pic-t(6).jpg"},
+			{"thumb": "../img/pic-t(6)-2.jpg", "big": "../img/pic-t(6)-2.jpg"},
+			{"thumb": "../img/pic-t(6)-3.jpg", "big": "../img/pic-t(6)-3.jpg"},
+			{"thumb": "../img/pic-t(6)-4.jpg", "big": "../img/pic-t(6)-4.jpg"}
 		],
-		"content": "Dinterdum pretium de condimentus",
-		"color": "black",
-		"price": "$99.00",
+		"content": "[21SS 뉴컬러] Guildo U Elbow Patch (21A)",
+		"color": "Noisette(Ecru/Marine)",
+		"price": "$104.59",
 		"star": "4.6"
 	}
 ]

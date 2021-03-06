@@ -140,7 +140,7 @@ h2.title-main {font-family: 'DM Serif Display', serif; font-size: 2.5em; letter-
 /************ .navi-wrapper *************/
 .navi-wrapper {border-top: 1px solid #eaeaea; z-index: 99; width: 100%; top: 0; background-color: #fff;}
 .navi-wrapper > .wrapper {display: flex; align-items: center;}
-.navi-wrapper > .wrapper > .navi {padding: 1.5em; font-weight: bold; letter-spacing: 0.1em;}
+.navi-wrapper > .wrapper > .navi {margin-right: 3em; padding: 1.5em 0; font-weight: bold; letter-spacing: 0.1em;}
 .navi-wrapper > .wrapper > .navi:first-child {padding-left: 0;}
 .navi-wrapper .a-search {margin-left: auto; margin-right: 0.5em;}
 .navi-wrapper a .fa {font-size: 1.5em;}
@@ -151,20 +151,16 @@ h2.title-main {font-family: 'DM Serif Display', serif; font-size: 2.5em; letter-
 .navi-wrapper a.bt-wishlist {margin-right: 2em;}
 
 .sub-wrapper {position: absolute; width: 100%; top: 4.3em; left: 0;  background-color: #fff; font-weight: normal; letter-spacing: -0.05em; transform: translateY(50px); opacity: 0; transition: all 0.25s; height: 0; overflow: hidden;}
-.sub-wrapper.active {transform: translateY(0); opacity: 1; height: auto; overflow: visible; border-top: 1px solid #eaeaea;}
+.sub-wrapper.active {transform: translateY(-0.25%); opacity: 1; height: auto; overflow: visible; border-top: 1px solid #eaeaea;}
 .sub-wrapper .sub-navi-wrapper {padding: 2.5em 0 1.5em 0; display: flex; align-items: flex-start;}
 .sub-wrapper .sub-navi-wrap {flex: 0 0 18%; margin-right: 2%; display: flex; flex-direction: column; align-items: flex-start;}
 .sub-wrapper .sub-navi {padding: 0.5em 0;}
 .sub-wrapper .sub-banner {flex: 0 0 38%; margin-left: auto; margin-top: 0.5em; overflow: hidden;}
-.sub-wrapper .sub-banner > img {transition: all 0.75s; opacity: .8}
+.sub-wrapper .sub-banner > img {transition: all 0.75s; opacity: .9}
 .sub-wrapper .sub-banner:hover > img {transform: scale(1.2); opacity: 1;}
 
 .navi-bottom {background-color: #eaeaea; padding: 2em 0;}
-/*
-.slide-wrapper .wrapper-mid {}
-.slide-wrapper .slide-stage {border: 1px solid red;}
-.slide-wrapper .slide-container {width: 100%; display: flex; position: relative;}
-*/
+
 .slide-container .bt-arrow {font-size: 3em; color: #293356; position: absolute; top: 50%; transform: translateY(-50%); cursor: pointer;}
 .slide-container .bt-prev {left: 0; z-index: 2;}
 .slide-container .bt-next {right: 0; z-index: 2;}
@@ -257,10 +253,10 @@ h2.title-main {font-family: 'DM Serif Display', serif; font-size: 2.5em; letter-
 /************ featured-wrapper *************/
 .featured-wrapper {padding: 4em 0;}
 .featured-wrap {margin-top: 3em; position: relative; overflow: hidden;}
-.featured-wrap .banner-wrap {position: absolute; left: 2%; bottom: 26%; padding: 0.5em; }
+.featured-wrap .banner-wrap {position: absolute; left: 3%; bottom: 30%; padding: 0.5em; background-color: #f9f9f9;}
 .featured-wrap > img {max-height: 100%;}
 .featured-wrap .prd {width: 274px; position: absolute; top: 2%; right: 0; box-shadow: 0 0 8px rgba(0,0,0,.3);}
-.featured-wrap .banner-wrap .banner {border: 3px solid #bbb; padding: 1.5em;}
+.featured-wrap .banner-wrap .banner {border: 3px solid #bbb; padding: 1.5em; } 
 .featured-wrap .banner-wrap .title {font-size: 3em; font-family: 'DM Serif Display', serif; margin-bottom: 0.5em; color: #293356;}
 .featured-wrap .banner-wrap .content {margin-bottom: 2em;}
 .featured-wrap .banner-wrap .bts {display: flex; justify-content: space-between;}
